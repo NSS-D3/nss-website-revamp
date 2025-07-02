@@ -105,20 +105,7 @@ export function Footer() {
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © 2024 NSS BITS Pilani. All rights reserved. | "Not Me, But You"
           </p>
-          <div className="flex space-x-6 text-sm">
-            <button className="text-gray-400 hover:text-white transition-colors">
-              Privacy Policy
-            </button>
-            <button className="text-gray-400 hover:text-white transition-colors">
-              Terms of Service
-            </button>
-            <button
-              onClick={() => (window.location.href = "/unsubscribe")}
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Unsubscribe
-            </button>
-          </div>
+          <div className="flex space-x-6 text-sm"></div>
         </div>
       </div>
     </footer>
