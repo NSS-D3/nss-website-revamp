@@ -15,13 +15,71 @@ import {
 } from "./ui/dialog";
 
 export function ActivitiesSection() {
-  const { data: teamMembers = [], isLoading } = useQuery<TeamMember[]>({
+  const { data: teamMembers = [
+    {
+      id:1, name:"Sitaram Prajapat", position:"School Coordinator"
+    },
+    {
+      id:2, name:"Shreena Kansagra", position:"School Coordinator"
+    },
+    {
+      id:3, name:"Isha Gupta", position:"Parisodh Coordinator"
+    },
+    
+    {
+      id:4, name:"Siddharth Bhamidipati", position:"Parisodh Coordinator"
+    },
+      {
+      id:5, name:"Aarushi Tiwari", position:"Umang Coordinator"
+    },
+      {
+      id:6, name:"Shivansh Saxena", position:"Umang Coordinator"
+    },
+      {
+      id:7, name:"Aayush Katakwar", position:"Computer Literacy Programme Coordinator"
+    },
+      {
+      id:8, name:"Mansi Mittal", position:"Computer Literacy Programme Coordinator"
+    },
+      {
+      id:9, name:"Samridhi Agrawal", position:"Health and public awareness Coordinator"
+    },
+      {
+      id:10, name:"Bhuvanyu Kumar", position:"Health and public awareness Coordinator"
+    },
+      {
+      id:11, name:"Soumya Yadav", position:"Department of Sponsorship and Collaboration Coordinator"
+    },
+      {
+      id:12, name:"Jainam Gandhi", position:"Events Coordinator"
+    },
+      {
+      id:13, name:"Anuj Paliwal", position:"Events Coordinator"
+    },
+     {
+      id:14, name:"Atharv Agrawal", position:"Department of Design and Development Coordinator"
+    },
+     {
+      id:15, name:"Dhruv Gupta", position:"Department of Design and Development Coordinator"
+    },
+     {
+      id:16, name:"Medhansh Sharma", position:"Department of Design and Development Coordinator"
+    },
+     
+
+
+
+
+
+  ], isLoading } = useQuery<TeamMember[]>({
     queryKey: ["/api/team"],
   });
 
   const coordinators = teamMembers.filter((member) =>
     member.position.includes("Coordinator")
   );
+
+
 
   // Department data with complete details
   const departments = [
@@ -206,7 +264,10 @@ export function ActivitiesSection() {
         "Planning and organizing major NSS events and festivals, managing event logistics and coordination activities.",
       icon: "fas fa-calendar-alt",
       color: "from-purple-500 to-pink-500",
-      members: coordinators.filter((c) => c.position.includes("Events")),
+      members: coordinators.filter((c) => c.position.includes("Events")), 
+        
+
+      
       details: {
         mission:
           "To create impactful events that raise social awareness and engage the community in meaningful activities.",
@@ -223,6 +284,7 @@ export function ActivitiesSection() {
           "Facilitated participation of 100+ colleges in competitions",
           "Created awareness among 15,000+ community members",
         ],
+
       },
     },
   ];
