@@ -379,12 +379,7 @@ export function ActivitiesSection() {
                       </div>
                     )}
 
-                    <div className="flex gap-4 pt-4 border-t">
-                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                        Join Department
-                      </Button>
-                      <Button variant="outline">Learn More</Button>
-                    </div>
+                    
                   </div>
                 </DialogContent>
               </Dialog>
