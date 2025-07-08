@@ -27,8 +27,7 @@ Through Junoon, we aim to inspire students to become socially conscious leaders 
 Free entry for all BITS students. External participants welcome with prior registration.`,
     date: new Date("2024-04-15"),
     location: "BITS Pilani Campus",
-    imageUrl:
-      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    imageUrl: "/events/junoon.jpeg",
     category: "cultural",
   },
   {
@@ -114,9 +113,8 @@ This year's blood donation camp features:
 
 Register now and be a hero in someone's story!`,
     date: new Date("2024-03-25"),
-    location: "Medical Center",
-    imageUrl:
-      "https://images.unsplash.com/photo-1615461065624-c4b4c2dcd2a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    location: "Old SAC",
+    imageUrl: "/events/bdc.jpeg",
     category: "health",
   },
   {
@@ -172,8 +170,7 @@ Participants will leave with:
 Limited seats available. Early bird discounts for student groups.`,
     date: new Date("2024-05-10"),
     location: "Auditorium Complex",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+    imageUrl: "/events/cdy.jpeg",
     category: "conference",
   },
 ];
