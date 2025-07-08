@@ -19,7 +19,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Devansh Sureka",
     position: "Secretary",
-    imageUrl: "/2023/devansh.jpeg",
+    imageUrl: "/2023/devansh.jpg",
   },
   // School Department
   {
