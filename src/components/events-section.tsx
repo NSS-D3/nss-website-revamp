@@ -1,9 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Event } from "../../shared/schema";
+import { events } from "../lib/events.ts";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import {
   Dialog,
@@ -15,9 +14,6 @@ import {
 } from "./ui/dialog";
 
 export function EventsSection() {
-  const { data: events = [], isLoading } = useQuery<Event[]>({
-    queryKey: ["/api/events"],
-  });
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const formatDate = (date: string | Date) => {
@@ -147,20 +143,20 @@ export function EventsSection() {
     });
   };
 
-  if (isLoading) {
-    return (
-      <section id="events" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="animate-pulse space-y-4">
-              <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto"></div>
-              <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <section id="events" className="py-20 bg-white">
+  //       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  //         <div className="text-center">
+  //           <div className="animate-pulse space-y-4">
+  //             <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto"></div>
+  //             <div className="h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+  //   );
+  // }
 
   const featuredEvent = events[0];
   const otherEvents = events.slice(1, 5);
@@ -184,7 +180,7 @@ export function EventsSection() {
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {events.map((event, index) => (
             <motion.div
-              key={event.id}
+              key={event.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -279,12 +275,12 @@ export function EventsSection() {
                     <div className="prose prose-gray max-w-none">
                       {renderEventContent(event.content)}
                     </div>
-                    <div className="flex gap-4 pt-4 border-t">
+                    {/* <div className="flex gap-4 pt-4 border-t">
                       <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                         Register Now
                       </Button>
                       <Button variant="outline">Share Event</Button>
-                    </div>
+                    </div> */}
                   </div>
                 </DialogContent>
               </Dialog>
