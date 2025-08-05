@@ -18,7 +18,7 @@ const Flower = forwardRef((props, ref: any) => {
         {
           scrollTrigger: {
             trigger: `.${styles.container}`,
-            start: "50% 20%",
+            start: "47% 20%",
             end: "170% 20%",
             markers: false,
             scrub: 2,
