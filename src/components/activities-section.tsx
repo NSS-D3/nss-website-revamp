@@ -60,12 +60,7 @@ export function ActivitiesSection() {
                       >
                         {dept.description}
                       </p>
-                      <div className="mt-4">
-                        <Badge variant="secondary" className="text-xs">
-                          {dept.members.length} Coordinator
-                          {dept.members.length !== 1 ? "s" : ""}
-                        </Badge>
-                      </div>
+                     
                     </CardContent>
                   </Card>
                 </DialogTrigger>

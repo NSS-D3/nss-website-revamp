@@ -77,8 +77,8 @@ export const ACTIVITIES = [
 
 export const IMPACT_STATS = [
   {
-    value: "500+",
-    label: "Active Volunteers",
+    value: "1989",
+    label: "Started in",
     color: "text-bits-blue"
   },
   {
