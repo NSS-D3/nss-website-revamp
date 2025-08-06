@@ -1,3 +1,5 @@
+import { href } from "react-router";
+
 export const teamMembers = [
   {
     id: 1,
@@ -254,6 +256,7 @@ export const departments = [
       "Overseeing literacy and education programs, managing school outreach and student mentorship programs.",
     icon: "fas fa-graduation-cap",
     color: "from-blue-500 to-indigo-500",
+    href: "/school",
     members: coordinators.filter((c) => c.position.includes("School")),
     details: {
       mission: `NSS School is a community-driven initiative located in Pilani, committed to delivering high-quality, holistic education to students from grades 1 to 12—with a core mission of providing free education for all.  Operated by a team of passionate and dedicated volunteers, the school emphasizes not only strong academic foundations but also the development of moral values, social awareness, and a deep sense of responsibility in its students.\n\nIn addition to a well-rounded academic curriculum, the school collaborates with other departments to actively promote digital literacy, basic health awareness, sustainability, and more. Through a range of thoughtfully designed events and initiatives, NSS School fosters an environment where students are encouraged to think critically, act ethically, and contribute meaningfully to society. The school’s approach reflects a strong belief in education as a powerful tool for personal growth and community development.\n`,

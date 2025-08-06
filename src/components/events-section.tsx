@@ -164,7 +164,7 @@ export function EventsSection() {
   return (
     <section
       id="events"
-      className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
+      className="py-20 bg-[#ffc3c0]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

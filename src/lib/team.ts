@@ -114,45 +114,55 @@ export const teamMembers: TeamMember[] = [
 ];
 
 export type Professor = {
+ 
   name: string;
   position: string;
   email: string;
+   imageUrl?: string;
 };
 
 export const professors: Professor[] = [
   {
+    
     name: "Meghana Tare",
     position: "Faculty Incharge",
     email: "meghana.tare@pilani.bits-pilani.ac.in",
+    imageUrl: "/profs/meghana.png"
   },
   {
     name: "Dr. Prashant Uday Manohar",
     position: "Programme Officer",
     email: "prashant.manohar@pilani.bits-pilani.ac.in",
+    imageUrl: "/profs/prashant-uday.jpg"
   },
   {
     name: "Sudeshna M Chowdhury",
     position: "Programme Officer",
     email: "sudeshna.chowdhury@pilani.bits-pilani.ac.in",
+    imageUrl: "/profs/sudeshna.jpg"
   },
   {
     name: "Chandra Shekhar",
     position: "Programme Officer",
     email: "chandra.shekhar@pilani.bits-pilani.ac.in",
+    imageUrl: "/profs/chandrashekhar.jpg"
   },
   {
     name: "Anirudh Singh Rana",
     position: "Programme Officer",
     email: "anirudh.rana@pilani.bits-pilani.ac.in",
+    imageUrl: "/profs/asr.jpg"
   },
   {
     name: "Nirankush Dutta",
     position: "Programme Officer",
     email: "nirankush.dutta@pilani.bits-pilani.ac.in",
+    imageUrl: "/profs/nirankush.jpg"
   },
   {
     name: "Sandeep Joshi",
     position: "Programme Officer",
     email: "sandeep.joshi@pilani.bits-pilani.ac.in",
+    imageUrl: "/profs/sandeep.jpg"
   },
 ];

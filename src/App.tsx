@@ -9,6 +9,7 @@ import { EventsPage } from "./pages/events";
 import { OfficeBearersPage } from "./pages/office-bearers";
 import { NewsletterPage } from "./pages/newsletter";
 import { GalleryPage } from "./pages/gallery";
+import  { School } from "./components/DepartmentPages/school";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/office-bearers" element={<OfficeBearersPage />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
+         
         </Routes>
       </TooltipProvider>
     </QueryClientProvider>

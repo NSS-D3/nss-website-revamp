@@ -86,6 +86,8 @@ export default function Landing() {
           }}
         />
       </div> */}
+
+      
       <div className={styles.content}>
         <div className={styles.title1}>
           <h1>

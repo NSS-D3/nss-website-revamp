@@ -4,14 +4,14 @@ import { Card, CardContent } from "./ui/card";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-[#ffc3c0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl font-serif font-bold text-black mb-4">
             About NSS BITS Pilani
           </h2>
           <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg font-arial text-[#2b2b2b] max-w-3xl mx-auto">
             The National Service Scheme at BITS Pilani is dedicated to
             developing social consciousness and community service spirit among
             students through meaningful engagement with society.
@@ -38,7 +38,7 @@ export function AboutSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-3xl font-serif font-bold text-gray-900 mb-6">
               Our Mission
             </h3>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
