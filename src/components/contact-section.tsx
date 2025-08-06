@@ -137,8 +137,8 @@ export function ContactSection() {
               </h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-bits-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-map-marker-alt text-bits-blue"></i>
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-map-marker-alt text-blue-700"></i>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">
@@ -153,8 +153,8 @@ export function ContactSection() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-community-green/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-envelope text-community-green"></i>
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-envelope text-green-700"></i>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Email</h4>

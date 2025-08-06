@@ -65,6 +65,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "bits-blue": "#1e3a8a", // Blue-800 for good contrast
+        "community-green": "#15803d", // Green-700 for good contrast
+        "creative-purple": "#7c3aed", // Purple-600 for good contrast
+        "energy-amber": "#d97706", // Amber-600 for good contrast
+        "action-red": "#dc2626", // Red-600 for good contrast
       },
       keyframes: {
         "accordion-down": {

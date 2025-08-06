@@ -56,7 +56,7 @@ export function HeroSection() {
             <Button
               onClick={handleWatchStory}
               variant="outline"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-bits-blue font-semibold py-4 px-8 rounded-full transition-all duration-300"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-800 font-semibold py-4 px-8 rounded-full transition-all duration-300"
               size="lg"
             >
               <i className="fas fa-play mr-2"></i>

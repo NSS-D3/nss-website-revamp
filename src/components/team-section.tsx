@@ -64,13 +64,13 @@ export function TeamSection() {
                   >
                     <Card className="card-hover">
                       <CardContent className="p-6 text-center">
-                        <div className="w-16 h-16 bg-bits-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <i className="fas fa-user-tie text-bits-blue text-xl"></i>
+                        <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <i className="fas fa-user-tie text-blue-700 text-xl"></i>
                         </div>
                         <h5 className="font-semibold text-gray-900 mb-1">
                           {faculty.name}
                         </h5>
-                        <p className="text-sm text-bits-blue font-medium mb-2">
+                        <p className="text-sm text-blue-700 font-medium mb-2">
                           {faculty.position}
                         </p>
                         {faculty.email && (

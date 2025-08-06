@@ -25,7 +25,7 @@ export function Navigation() {
   
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-[#od5760] shadow-lg">
+    <nav className="fixed w-full top-0 z-50 bg-[#0d5760] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -71,7 +71,7 @@ export function Navigation() {
                       key={link.href}
                       to={link.href}
                       onClick={close}
-                      className="block px-3 py-3 text-left text-gray-700 hover:text-bits-blue hover:bg-gray-50 rounded-md font-medium transition-colors"
+                      className="block px-3 py-3 text-left text-gray-700 hover:text-blue-800 hover:bg-gray-50 rounded-md font-medium transition-colors"
                     >
                       {link.label}
                     </Link>

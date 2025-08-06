@@ -83,3 +83,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-blue-600 via-green-600 to-purple-600;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+}

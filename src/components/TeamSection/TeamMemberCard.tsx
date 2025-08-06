@@ -35,7 +35,7 @@ const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
           <h4 className="text-xl font-semibold text-gray-900 mb-1">
             {member.name}
           </h4>
-          <p className="text-community-green font-medium mb-3">
+          <p className="text-green-700 font-medium mb-3">
             {member.position}
           </p>
           <div className="flex space-x-3 mt-auto">
@@ -46,14 +46,14 @@ const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
                 rel="noopener noreferrer"
               >
                 <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <i className="fab fa-linkedin text-gray-400 hover:text-bits-blue"></i>
+                  <i className="fab fa-linkedin text-gray-400 hover:text-blue-700"></i>
                 </Button>
               </a>
             )}
             {member.emailUrl && (
               <a href={`mailto:${member.emailUrl}`}>
                 <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <i className="fas fa-envelope text-gray-400 hover:text-bits-blue"></i>
+                  <i className="fas fa-envelope text-gray-400 hover:text-blue-700"></i>
                 </Button>
               </a>
             )}

@@ -79,22 +79,22 @@ export const IMPACT_STATS = [
   {
     value: "1989",
     label: "Started in",
-    color: "text-bits-blue"
+    color: "text-blue-700"
   },
   {
     value: "10,000+", 
     label: "Lives Impacted",
-    color: "text-community-green"
+    color: "text-green-700"
   },
   {
     value: "50+",
     label: "Projects Completed", 
-    color: "text-creative-purple"
+    color: "text-purple-600"
   },
   {
     value: "25,000+",
     label: "Service Hours",
-    color: "text-energy-amber"
+    color: "text-amber-600"
   }
 ];
 

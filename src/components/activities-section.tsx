@@ -20,9 +20,9 @@ export function ActivitiesSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Departments</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Departments</h2>
           <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             Discover our specialized departments and their dedicated work in
             community service across various domains.
           </p>
