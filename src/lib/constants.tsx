@@ -103,18 +103,18 @@ export const OBJECTIVES = [
     title: "Education & Awareness",
     description: "Promoting literacy, education, and awareness programs in rural and urban communities.",
     icon: "fas fa-graduation-cap",
-    color: "bg-gradient-to-r from-blue-500 to-indigo-400",
+   
   },
   {
     title: "Health & Hygiene", 
     description: "Conducting health camps, hygiene awareness, and medical assistance programs.",
     icon: "fas fa-heart",
-    color: "bg-gradient-to-r from-green-500 to-teal-400",
+   
   },
   {
     title: "Environment",
     description: "Environmental conservation, tree plantation, and sustainable development initiatives.",
     icon: "fas fa-leaf",
-    color: "bg-gradient-to-r from-green-600 to-lime-400",
+   
   }
 ];

@@ -31,6 +31,7 @@ export function AboutSection() {
             className="order-2 lg:order-1"
           >
             <img
+            style={{ borderRadius: "1rem" , boxShadow: "0 40px 20px rgba(0, 0, 0, 0.1)"}}
               src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               alt="Students participating in tree planting environmental initiative"
               className="rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl w-full h-auto"
@@ -59,8 +60,8 @@ export function AboutSection() {
                 "Identify the needs and problems of the community",
               ].map((item, index) => (
                 <div key={index} className="flex items-start space-x-3">
-                  <div className="w-5 h-5 sm:w-6 sm:h-6 bg-community-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <i className="fas fa-check text-white text-xs"></i>
+                  <div className=" sm:w-2 sm:h-2 bg-black rounded-full flex items-center justify-center flex-shrink-0 mt-2">
+                    
                   </div>
                   <p className="text-sm sm:text-base text-gray-700">{item}</p>
                 </div>
@@ -79,16 +80,16 @@ export function AboutSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-gradient-to-br from-blue-50 to-green-50 border-0 card-hover h-full">
+              <Card className="bg-[#e2c19aff] border-0 card-hover h-full">
                 <CardContent className="p-6 sm:p-8">
                   <div
-                    className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ${objective.color} rounded-xl flex items-center justify-center mb-4 sm:mb-6`}
+                    className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16  rounded-xl flex items-center justify-center mb-4 sm:mb-6`}
                   >
                     <i
-                      className={`${objective.icon} text-white text-xl sm:text-2xl`}
+                      className={`${objective.icon} text-black text-xl sm:text-3xl`}
                     ></i>
                   </div>
-                  <h4 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+                  <h4 className="text-lg sm:text-xl font-serif font-semibold text-gray-900 mb-3 sm:mb-4">
                     {objective.title}
                   </h4>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed">

@@ -229,7 +229,7 @@ export const School = () => {
         <section>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
-              School Life in Pictures
+              School in Pictures
             </h2>
           </div>
           
