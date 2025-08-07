@@ -19,7 +19,7 @@ type Coordinator = {
   contact?: string;
 };
 
-type EventsData = {
+type CLPData = {
   name: string;
   description: string;
   icon: string;
@@ -31,48 +31,49 @@ type EventsData = {
   };
 };
 
-export const Events = () => {
+export const ComputerLiteracyProgramme = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   
- 
-  const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/annual-festival.jpg', alt: 'Annual festival celebration', category: 'festival' },
-    { id: 2, src: '/images/awareness-campaign.jpg', alt: 'Social awareness campaign', category: 'campaign' },
-    { id: 3, src: '/images/workshop-event.jpg', alt: 'Community workshop in progress', category: 'workshop' },
-    { id: 4, src: '/images/cultural-event.jpg', alt: 'Cultural performance at event', category: 'cultural' },
-    { id: 5, src: '/images/event-planning.jpg', alt: 'Event planning meeting', category: 'planning' },
-    { id: 6, src: '/images/volunteer-coordination.jpg', alt: 'Volunteers coordinating event', category: 'volunteers' },
-  ];
-
-  //  coordinators data
-  const coordinators: Coordinator[] = [
-    { name: "Anuj Paliwal", position: "Events Coordinator" },
-    
-  ];
-
   
-  const eventsData: EventsData = {
-    name: "Events",
-    description: "Planning and organizing major NSS events and festivals, managing event logistics and coordination activities.",
-    icon: "fas fa-calendar-alt",
-    color: "from-purple-500 to-pink-500",
-    members: coordinators.filter((c) => c.position.includes("Events")),
+  const galleryImages: GalleryImage[] = [
+    { id: 1, src: '/images/computer-class.jpg', alt: 'Computer literacy class in session', category: 'training' },
+    { id: 2, src: '/images/digital-literacy.jpg', alt: 'Teaching digital literacy to adults', category: 'adults' },
+    { id: 3, src: '/images/kids-computers.jpg', alt: 'Children learning computer skills', category: 'children' },
+    { id: 4, src: '/images/community-training.jpg', alt: 'Community computer training session', category: 'community' },
+    { id: 5, src: '/images/computer-lab.jpg', alt: 'CLP computer lab setup', category: 'infrastructure' },
+    { id: 6, src: '/images/volunteer-teaching.jpg', alt: 'Volunteer teaching computer skills', category: 'volunteers' },
+  ];
+
+  // coordinators data
+  const coordinators: Coordinator[] = [
+    { name: "Aayush Katakwar", position: "Computer Literacy Programme Coordinator" },
+    { name: "Mansi Mittal", position: "Computer Literacy Programme Manager" },
+  ];
+
+  // CLP data 
+  const clpData: CLPData = {
+    name: "Computer Literacy Programme",
+    description: "Teaching digital skills and computer literacy to communities, developing digital education programs and training modules.",
+    icon: "fas fa-laptop",
+    color: "from-cyan-500 to-blue-500",
+    members: coordinators.filter((c) => c.position.includes("Computer")),
     details: {
-      mission: "To create impactful events that raise social awareness and engage the community in meaningful activities.",
+      mission: "To bridge the digital divide by providing computer education and digital literacy to underserved communities.",
       activities: [
         {
-          title: "Annual festivals and cultural events",
-          description: "Organizing annual festivals and cultural events to promote social awareness.",
+          title: "Basic computer training programs",
+          description: "Providing basic computer training to children and adults.",
         },
         {
-          title: "Awareness campaigns and workshops",
-          description: "Organizing awareness campaigns and workshops on various social issues.",
+          title: "Digital literacy for adults",
+          description: "Teaching adults how to use computers and the internet.",
         },
       ]
     }
   };
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -82,7 +83,6 @@ export const Events = () => {
   }, [galleryImages.length]);
 
   
-
   // Toggle activity expansion
   const toggleActivity = (index: number) => {
     setExpandedActivity(expandedActivity === index ? null : index);
@@ -90,14 +90,14 @@ export const Events = () => {
 
   return (
     <div className="min-h-screen font-serif bg-[#FFF5F4]">
-      {/* Header */}
+      
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4 text-[#FFE5E3] tracking-tight">
-            {eventsData.name} Department
+            {clpData.name}
           </h1>
           <p className="text-2xl italic font-light text-[#FFC3C0]">
-            Creating Impactful Community Experiences
+            Bridging the Digital Divide
           </p>
           <div className="mt-6 h-px w-32 mx-auto bg-[#FFC3C0] bg-opacity-50"></div>
         </div>
@@ -107,13 +107,13 @@ export const Events = () => {
         {/* About Section */}
         <section className="mb-20 bg-white p-8 rounded-lg shadow-sm border border-[#FFC3C0]">
           <h2 className="text-3xl font-semibold text-[#0D5760] mb-6 text-center">
-            About Our Department
+            About CLP
           </h2>
           <div className="prose max-w-none text-gray-700">
-            <p className="text-lg mb-6">{eventsData.description}</p>
+            <p className="text-lg mb-6">{clpData.description}</p>
             <div className="bg-[#FFC3C0] bg-opacity-20 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-[#0D5760] mb-3">Our Mission</h3>
-              <p className="whitespace-pre-line">{eventsData.details.mission}</p>
+              <p className="whitespace-pre-line">{clpData.details.mission}</p>
             </div>
           </div>
         </section>
@@ -122,12 +122,12 @@ export const Events = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
-              Our Activities
+              Our Programs
             </h2>
           </div>
           
           <div className="space-y-6">
-            {eventsData.details.activities.map((activity, index) => (
+            {clpData.details.activities.map((activity, index) => (
               <div 
                 key={index} 
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
@@ -155,7 +155,7 @@ export const Events = () => {
         <section>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
-              Our Events
+              CLP in Action
             </h2>
           </div>
           
@@ -194,11 +194,11 @@ export const Events = () => {
             </div>
           </div>
           
-  
+      
         </section>
 
         {/* Team Section */}
-        {eventsData.members.length > 0 && (
+        {clpData.members.length > 0 && (
           <section className="mt-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
@@ -206,7 +206,7 @@ export const Events = () => {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eventsData.members.map((member, index) => (
+              {clpData.members.map((member, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#FFC3C0] flex items-center justify-center text-3xl text-[#0D5760] font-bold">
                     {member.name.charAt(0)}
@@ -226,4 +226,4 @@ export const Events = () => {
   );
 };
 
-export default Events;
+export default ComputerLiteracyProgramme;

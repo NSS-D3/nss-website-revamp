@@ -19,7 +19,7 @@ type Coordinator = {
   contact?: string;
 };
 
-type EventsData = {
+type ParisodhData = {
   name: string;
   description: string;
   icon: string;
@@ -31,49 +31,48 @@ type EventsData = {
   };
 };
 
-export const Events = () => {
+export const Parisodh = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   
- 
+  // Sample gallery data
   const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/annual-festival.jpg', alt: 'Annual festival celebration', category: 'festival' },
-    { id: 2, src: '/images/awareness-campaign.jpg', alt: 'Social awareness campaign', category: 'campaign' },
-    { id: 3, src: '/images/workshop-event.jpg', alt: 'Community workshop in progress', category: 'workshop' },
-    { id: 4, src: '/images/cultural-event.jpg', alt: 'Cultural performance at event', category: 'cultural' },
-    { id: 5, src: '/images/event-planning.jpg', alt: 'Event planning meeting', category: 'planning' },
-    { id: 6, src: '/images/volunteer-coordination.jpg', alt: 'Volunteers coordinating event', category: 'volunteers' },
+    { id: 1, src: '/images/tree-plantation.jpg', alt: 'Tree plantation drive', category: 'plantation' },
+    { id: 2, src: '/images/waste-segregation.jpg', alt: 'Waste segregation workshop', category: 'recycling' },
+    { id: 3, src: '/images/cleanup-drive.jpg', alt: 'Community cleanup drive', category: 'cleanup' },
+    { id: 4, src: '/images/eco-workshop.jpg', alt: 'Environmental awareness workshop', category: 'education' },
   ];
 
   //  coordinators data
   const coordinators: Coordinator[] = [
-    { name: "Anuj Paliwal", position: "Events Coordinator" },
-    
+    { name: "Isha Verma", position: "Parisodh Coordinator" },
+    { name: "Siddharth Bhamidipati", position: "Parisodh Coordinator" },
   ];
 
   
-  const eventsData: EventsData = {
-    name: "Events",
-    description: "Planning and organizing major NSS events and festivals, managing event logistics and coordination activities.",
-    icon: "fas fa-calendar-alt",
-    color: "from-purple-500 to-pink-500",
-    members: coordinators.filter((c) => c.position.includes("Events")),
+  const parisodhData: ParisodhData = {
+    name: "Parisodh",
+    description: "Leading environmental cleanup drives and sustainability projects, coordinating waste management and green initiatives.",
+    icon: "fas fa-seedling",
+    color: "from-green-600 to-lime-500",
+    members: coordinators.filter((c) => c.position.includes("Parisodh")),
     details: {
-      mission: "To create impactful events that raise social awareness and engage the community in meaningful activities.",
+      mission: "To promote environmental conservation and sustainability through community-driven initiatives.",
       activities: [
         {
-          title: "Annual festivals and cultural events",
-          description: "Organizing annual festivals and cultural events to promote social awareness.",
+          title: "Tree plantation drives",
+          description: "Planting trees to improve the local environment.",
         },
         {
-          title: "Awareness campaigns and workshops",
-          description: "Organizing awareness campaigns and workshops on various social issues.",
+          title: "Waste segregation and recycling programs",
+          description: "Promoting waste segregation and recycling to reduce landfill waste.",
         },
       ]
     }
   };
 
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
@@ -82,8 +81,7 @@ export const Events = () => {
   }, [galleryImages.length]);
 
   
-
-  // Toggle activity expansion
+  
   const toggleActivity = (index: number) => {
     setExpandedActivity(expandedActivity === index ? null : index);
   };
@@ -93,11 +91,11 @@ export const Events = () => {
       {/* Header */}
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4 text-[#FFE5E3] tracking-tight">
-            {eventsData.name} Department
+          <h1 className="text-5xl font-bold mb-4 text-[#FFE5E3] tracking-tight">
+            {parisodhData.name}
           </h1>
           <p className="text-2xl italic font-light text-[#FFC3C0]">
-            Creating Impactful Community Experiences
+            Environmental Conservation & Sustainability
           </p>
           <div className="mt-6 h-px w-32 mx-auto bg-[#FFC3C0] bg-opacity-50"></div>
         </div>
@@ -107,13 +105,13 @@ export const Events = () => {
         {/* About Section */}
         <section className="mb-20 bg-white p-8 rounded-lg shadow-sm border border-[#FFC3C0]">
           <h2 className="text-3xl font-semibold text-[#0D5760] mb-6 text-center">
-            About Our Department
+            About Parisodh
           </h2>
           <div className="prose max-w-none text-gray-700">
-            <p className="text-lg mb-6">{eventsData.description}</p>
+            <p className="text-lg mb-6">{parisodhData.description}</p>
             <div className="bg-[#FFC3C0] bg-opacity-20 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-[#0D5760] mb-3">Our Mission</h3>
-              <p className="whitespace-pre-line">{eventsData.details.mission}</p>
+              <p className="whitespace-pre-line">{parisodhData.details.mission}</p>
             </div>
           </div>
         </section>
@@ -122,12 +120,12 @@ export const Events = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
-              Our Activities
+              Our Initiatives
             </h2>
           </div>
           
           <div className="space-y-6">
-            {eventsData.details.activities.map((activity, index) => (
+            {parisodhData.details.activities.map((activity, index) => (
               <div 
                 key={index} 
                 className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]"
@@ -155,7 +153,7 @@ export const Events = () => {
         <section>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
-              Our Events
+              Parisodh in Action
             </h2>
           </div>
           
@@ -193,12 +191,11 @@ export const Events = () => {
               ))}
             </div>
           </div>
-          
-  
+    
         </section>
 
         {/* Team Section */}
-        {eventsData.members.length > 0 && (
+        {parisodhData.members.length > 0 && (
           <section className="mt-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
@@ -206,7 +203,7 @@ export const Events = () => {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {eventsData.members.map((member, index) => (
+              {parisodhData.members.map((member, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
                   <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#FFC3C0] flex items-center justify-center text-3xl text-[#0D5760] font-bold">
                     {member.name.charAt(0)}
@@ -226,4 +223,4 @@ export const Events = () => {
   );
 };
 
-export default Events;
+export default Parisodh;

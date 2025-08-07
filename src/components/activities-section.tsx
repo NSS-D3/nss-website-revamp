@@ -11,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
+import { href } from "react-router";
 
 export function ActivitiesSection() {
   return (
@@ -39,6 +40,9 @@ export function ActivitiesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              onClick={() => {
+                window.location.href = `/${dept.id}`;
+              }}
 
               
             >
@@ -64,7 +68,7 @@ export function ActivitiesSection() {
                     </CardContent>
                   </Card>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                {/*<DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
                   <DialogHeader>
                     <DialogTitle className="text-2xl font-bold text-gray-900 flex items-center gap-3">
                       <div
@@ -146,7 +150,7 @@ export function ActivitiesSection() {
                       </div>
                     )}
                   </div>
-                </DialogContent>
+                </DialogContent>*/}
               </Dialog>
             </motion.div>
 

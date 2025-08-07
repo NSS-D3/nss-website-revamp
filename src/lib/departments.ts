@@ -1,5 +1,3 @@
-import { href } from "react-router";
-
 export const teamMembers = [
   {
     id: 1,
@@ -92,6 +90,7 @@ export const coordinators = teamMembers.filter((member) =>
 export const departments = [
   {
     name: "Computer Literacy Programme",
+    id: "computer-literacy-programme",
     description:
       "Teaching digital skills and computer literacy to communities, developing digital education programs and training modules.",
     icon: "fas fa-laptop",
@@ -115,6 +114,7 @@ export const departments = [
   },
   {
     name: "Department of Design and Development",
+    id: "department-of-design-and-development",
     description:
       "Creating visual content and design solutions for NSS initiatives, developing technical solutions and digital platforms.",
     icon: "fas fa-laptop-code",
@@ -138,6 +138,7 @@ export const departments = [
   },
   {
     name: "Department of Sponsorship and Collaboration",
+    id: "department-of-sponsorship-and-collaboration",
     description:
       "Managing partnerships and sponsorship initiatives, building strategic partnerships and collaboration opportunities.",
     icon: "fas fa-handshake",
@@ -162,6 +163,7 @@ export const departments = [
   },
   {
     name: "Events",
+    id: "events",
     description:
       "Planning and organizing major NSS events and festivals, managing event logistics and coordination activities.",
     icon: "fas fa-calendar-alt",
@@ -187,6 +189,7 @@ export const departments = [
   },
   {
     name: "Health Public Awareness",
+    id: "health-public-awareness",
     description:
       "Managing health camps and wellness programs, leading health awareness campaigns and medical outreach.",
     icon: "fas fa-stethoscope",
@@ -229,6 +232,7 @@ export const departments = [
   },
   {
     name: "Parisodh",
+    id: "parisodh",
     description:
       "Leading environmental cleanup drives and sustainability projects, coordinating waste management and green initiatives.",
     icon: "fas fa-seedling",
@@ -252,11 +256,11 @@ export const departments = [
   },
   {
     name: "School",
+    id: "school",
     description:
       "Overseeing literacy and education programs, managing school outreach and student mentorship programs.",
     icon: "fas fa-graduation-cap",
     color: "from-blue-500 to-indigo-500",
-    href: "/school",
     members: coordinators.filter((c) => c.position.includes("School")),
     details: {
       mission: `NSS School is a community-driven initiative located in Pilani, committed to delivering high-quality, holistic education to students from grades 1 to 12—with a core mission of providing free education for all.  Operated by a team of passionate and dedicated volunteers, the school emphasizes not only strong academic foundations but also the development of moral values, social awareness, and a deep sense of responsibility in its students.\n\nIn addition to a well-rounded academic curriculum, the school collaborates with other departments to actively promote digital literacy, basic health awareness, sustainability, and more. Through a range of thoughtfully designed events and initiatives, NSS School fosters an environment where students are encouraged to think critically, act ethically, and contribute meaningfully to society. The school’s approach reflects a strong belief in education as a powerful tool for personal growth and community development.\n`,
@@ -294,6 +298,7 @@ export const departments = [
   },
   {
     name: "Umang",
+    id: "umang",
     description: "Organizing support programmes for those in need.",
     icon: "fas fa-hands-helping",
     color: "from-orange-500 to-red-500",
