@@ -1,80 +1,129 @@
-import { get } from "http";
 import { useMobileMenu } from "../hooks/use-mobile-menu";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { Link } from "react-router-dom";
-
-
-
-
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navigationLinks = [
-  { href: "/", label: "Home" },
-  { href: "/departments", label: "Departments" },
-  { href: "#events", label: "Events" },
-  { href: "/office-bearers", label: "Office Bearers" },
-  { href: "/newsletter", label: "Newsletter" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/", label: "Home", isSection: false },
+  { href: "#about", label: "About", isSection: true },
+  { href: "#activities", label: "Departments", isSection: true },
+  { href: "#events", label: "Events", isSection: true },
+  { href: "#team", label: "Team", isSection: true },
+  
+  { href: "/gallery", label: "Gallery", isSection: false },
+  { href: "#contact", label: "Contact Us", isSection: true },
 ];
 
 export function Navigation() {
   const { isOpen, toggle, close } = useMobileMenu();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  
+  const handleLinkClick = (href: string, isSection: boolean) => {
+    if (isSection) {
+      // If we're not on the home page, navigate to home first
+      if (location.pathname !== '/') {
+        navigate('/', { replace: true });
+        // Wait for navigation to complete, then scroll
+        setTimeout(() => {
+          scrollToSection(href);
+        }, 200);
+      } else {
+        // Already on home page, just scroll
+        scrollToSection(href);
+      }
+    } else {
+      // Regular navigation
+      navigate(href);
+    }
+  };
+
+  const scrollToSection = (href: string) => {
+    const sectionId = href.replace('#', '');
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Use CSS scroll-margin for better positioning
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-[#0d5760] shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed w-full top-0 z-[9999] bg-[#0d5760] shadow-lg">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center">
+          <button 
+            onClick={() => handleLinkClick('/', false)}
+            className="flex items-center space-x-2 lg:space-x-3 hover:opacity-80 transition-opacity cursor-pointer group"
+          >
+            <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
               <img
                 src="/logo/logo.png"
                 alt="NSS Logo"
-                className="w-10 h-10 object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-white">NSS</h1>
-              <p className="text-xs text-white">BITS Pilani</p>
+            <div className="hidden xs:block">
+              <h1 className="text-sm sm:text-lg lg:text-xl font-bold text-white group-hover:text-gray-100 transition-colors">NSS</h1>
+              <p className="text-xs lg:text-sm text-white/90 group-hover:text-gray-200 transition-colors leading-none">BITS Pilani</p>
             </div>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-6 xl:space-x-8">
             {navigationLinks.map((link) => (
-              <Link
+              <button
                 key={link.href}
-                to={link.href}
-                className="text-white  hover:text-gray-300 transition-colors duration-200 font-medium"
+                onClick={() => handleLinkClick(link.href, link.isSection)}
+                className="text-white hover:text-gray-300 transition-colors duration-200 font-medium cursor-pointer text-sm xl:text-base px-2 py-1 rounded hover:bg-white/10"
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
           </div>
 
           {/* Mobile menu */}
-          <div className="md:hidden " data-mobile-menu>
+          <div className="lg:hidden" data-mobile-menu>
             <Sheet open={isOpen} onOpenChange={toggle}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <i className="fill-white fas fa-bars text-xl"></i>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  className="text-white hover:bg-white/10 p-2"
+                >
+                  <i className="fas fa-bars text-lg sm:text-xl"></i>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px]">
-                <div className="flex flex-col space-y-1 mt-8">
+              <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+                <div className="flex flex-col space-y-2 mt-8">
+                  <div className="flex items-center space-x-3 mb-6 pb-4 border-b">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#0d5760]">
+                      <img
+                        src="/logo/logo.png"
+                        alt="NSS Logo"
+                        className="w-8 h-8 object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-lg font-bold text-gray-900">NSS</h2>
+                      <p className="text-sm text-gray-600">BITS Pilani</p>
+                    </div>
+                  </div>
                   {navigationLinks.map((link) => (
-                    <Link
+                    <button
                       key={link.href}
-                      to={link.href}
-                      onClick={close}
-                      className="block px-3 py-3 text-left text-gray-700 hover:text-blue-800 hover:bg-gray-50 rounded-md font-medium transition-colors"
+                      onClick={() => {
+                        handleLinkClick(link.href, link.isSection);
+                        close();
+                      }}
+                      className="block w-full px-4 py-3 text-left text-gray-700 hover:text-blue-800 hover:bg-blue-50 rounded-lg font-medium transition-colors duration-200 border border-transparent hover:border-blue-200"
                     >
+                      <i className={`fas fa-${link.isSection ? 'anchor' : 'external-link-alt'} mr-3 text-sm text-gray-500`}></i>
                       {link.label}
-                    </Link>
+                    </button>
                   ))}
                 </div>
               </SheetContent>

@@ -10,7 +10,7 @@ import { EventsSection } from "../components/events-section";
 import { Footer } from "../components/footer";
 import Landing from "../components/landing/landing";
 import { Navigation } from "../components/navigation";
-import { NewsletterSection } from "../components/newsletter-section";
+
 import { TeamSection } from "../components/team-section";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -129,9 +129,7 @@ export default function Home() {
           <div className="content-section">
             <TeamSection />
           </div>
-          <div className="content-section">
-            <NewsletterSection />
-          </div>
+          
           <div className="content-section">
             <ContactSection />
           </div>

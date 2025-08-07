@@ -7,7 +7,7 @@ import { queryClient } from "./lib/queryClient";
 import { DepartmentsPage } from "./pages/departments";
 import { EventsPage } from "./pages/events";
 import { OfficeBearersPage } from "./pages/office-bearers";
-import { NewsletterPage } from "./pages/newsletter";
+
 import { GalleryPage } from "./pages/gallery";
 import { DepartmentPage } from "./pages/department";
 import SchoolDepartment from "./components/DepartmentPages/school";
@@ -23,7 +23,7 @@ function App() {
           <Route path="/departments/:slug" element={<DepartmentPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/office-bearers" element={<OfficeBearersPage />} />
-          <Route path="/newsletter" element={<NewsletterPage />} />
+          
           <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
       </TooltipProvider>
