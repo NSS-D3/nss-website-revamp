@@ -30,8 +30,8 @@ export function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center">
-                <i className="fas fa-hands-helping text-white text-xl"></i>
+              <div className="w-12 h-12  flex items-center justify-center">
+               <img src="/logo/logo.png" alt="NSS Logo" className="w-8 h-8" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold">NSS BITS Pilani</h3>

@@ -17,6 +17,7 @@ import {SponsorshipCollaboration} from "./pages/departmentofsponsorshipandcollab
 import {DesignDevelopment} from "./pages/d3";
 import {ComputerLiteracyProgramme} from "./pages/clp";
 import {Events} from "./pages/events";
+import {Junoon} from "./pages/junoon";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/department-of-design-and-development" element={<DesignDevelopment />} />
           <Route path="/computer-literacy-programme" element={<ComputerLiteracyProgramme />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/junoon" element={<Junoon />} />
          
         </Routes>
       </TooltipProvider>

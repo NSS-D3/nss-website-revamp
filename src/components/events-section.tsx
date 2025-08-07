@@ -185,6 +185,9 @@ export function EventsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
+              onClick={() =>
+                window.location.href = `/${event.title.toLowerCase().replace(/\s+/g, '-')}`
+              }
             >
               <Dialog>
                 <DialogTrigger asChild>

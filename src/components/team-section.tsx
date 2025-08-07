@@ -36,7 +36,7 @@ export function TeamSection() {
             Our Team
           </h2>
           <div className="w-16 sm:w-20 lg:w-24 h-1 gradient-bg mx-auto mb-4 sm:mb-6"></div>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-md lg:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Meet the dedicated team members who lead our community service
             initiatives and drive positive change.
           </p>
@@ -51,7 +51,7 @@ export function TeamSection() {
           {/* Faculty In-charge */}
           {facultyIncharge.length > 0 && (
             <div className="mb-8 sm:mb-12">
-              <h4 className="text-lg sm:text-xl font-semibold text-center text-gray-800 mb-4 sm:mb-6">
+              <h4 className="text-lg sm:text-xl font-semibold font-serif text-center text-gray-800 mb-4 sm:mb-6">
                 Faculty In-charge
               </h4>
               <div className="flex justify-center">
