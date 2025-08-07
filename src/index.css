@@ -83,3 +83,54 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-blue-600 via-green-600 to-purple-600;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ScrollSmoother and Animation Styles */
+#smooth-wrapper {
+  overflow: hidden;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+}
+
+.content-section {
+  will-change: transform, opacity;
+}
+
+/* Prevent flash of unstyled content during loading */
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+/* Improve performance for animations */
+.content-section,
+.flower,
+.stem {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Ensure smooth wrapper is always visible */
+#smooth-wrapper {
+  opacity: 1;
+}

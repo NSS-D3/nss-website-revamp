@@ -75,29 +75,7 @@ export const volunteers = pgTable("volunteers", {
   joinedAt: timestamp("joined_at").defaultNow().notNull(),
 });
 
-export const newsletterSubscribers = pgTable("newsletter_subscribers", {
-  id: serial("id").primaryKey(),
-  email: text("email").notNull().unique(),
-  firstName: text("first_name"),
-  lastName: text("last_name"),
-  status: text("status").notNull().default("active"), // 'active', 'unsubscribed', 'pending'
-  preferences: text("preferences").array(), // ['events', 'activities', 'general']
-  subscribedAt: timestamp("subscribed_at").defaultNow().notNull(),
-  unsubscribedAt: timestamp("unsubscribed_at"),
-});
 
-export const newsletters = pgTable("newsletters", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  description: text("description").notNull(),
-  content: text("content").notNull(),
-  category: text("category").notNull(), // 'events', 'activities', 'general', 'achievements'
-  featuredImage: text("featured_image"),
-  isPublished: boolean("is_published").default(false).notNull(),
-  publishedAt: timestamp("published_at"),
-  createdAt: timestamp("created_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull(),
-});
 
 export const professors = pgTable("professors", {
   id: serial("id").primaryKey(),
@@ -167,22 +145,7 @@ export const insertVolunteerSchema = createInsertSchema(volunteers).pick({
   experience: true,
 });
 
-export const insertNewsletterSubscriberSchema = createInsertSchema(newsletterSubscribers).pick({
-  email: true,
-  firstName: true,
-  lastName: true,
-  preferences: true,
-});
 
-export const insertNewsletterSchema = createInsertSchema(newsletters).pick({
-  title: true,
-  description: true,
-  content: true,
-  category: true,
-  featuredImage: true,
-  isPublished: true,
-  publishedAt: true,
-});
 
 export const insertProfessorSchema = createInsertSchema(professors).pick({
   name: true,
@@ -209,11 +172,9 @@ export type MediaItem = typeof mediaItems.$inferSelect;
 export type InsertVolunteer = z.infer<typeof insertVolunteerSchema>;
 export type Volunteer = typeof volunteers.$inferSelect;
 
-export type InsertNewsletterSubscriber = z.infer<typeof insertNewsletterSubscriberSchema>;
-export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+
 
 export type InsertProfessor = z.infer<typeof insertProfessorSchema>;
 export type Professor = typeof professors.$inferSelect;
 
-export type InsertNewsletter = z.infer<typeof insertNewsletterSchema>;
-export type Newsletter = typeof newsletters.$inferSelect;
+

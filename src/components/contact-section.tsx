@@ -109,20 +109,20 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 scroll-mt-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Get in Touch
           </h2>
-          <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="w-16 sm:w-20 lg:w-24 h-1 gradient-bg mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Ready to make a difference? Connect with us to join our community
             service initiatives.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <motion.div
             className="space-y-8"
@@ -132,19 +132,19 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Contact Information
               </h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-bits-blue/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-map-marker-alt text-bits-blue"></i>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-map-marker-alt text-blue-700 text-sm sm:text-base"></i>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">
+                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">
                       Address
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-sm sm:text-base text-gray-600">
                       NSS Office, near S9
                       <br />
                       BITS Pilani, Rajasthan 333031
@@ -152,35 +152,31 @@ export function ContactSection() {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-community-green/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-envelope text-community-green"></i>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-envelope text-green-700 text-sm sm:text-base"></i>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600">
+                    <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">Email</h4>
+                    <p className="text-sm sm:text-base text-gray-600 break-all">
                       nss@pilani.bits-pilani.ac.in
                     </p>
                   </div>
                 </div>
-
-                
-
-               
               </div>
             </div>
 
             {/* Social Media */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Follow Us
               </h3>
-              <div className="flex space-x-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 {socialLinks.map((social, index) => (
                   <Button
                     key={index}
                     size="icon"
-                    className={`w-12 h-12 rounded-xl text-white transition-colors duration-200 ${social.color}`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl text-white transition-all duration-200 hover:scale-110 ${social.color}`}
                     asChild
                   >
                     <a
@@ -188,7 +184,7 @@ export function ContactSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <i className={social.icon}></i>
+                      <i className={`${social.icon} text-sm sm:text-base`}></i>
                     </a>
                   </Button>
                 ))}
@@ -204,12 +200,12 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <Card className="bg-gradient-to-br from-gray-50 to-blue-50 border-0">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <CardContent className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                   Send us a Message
                 </h3>
-                <form className="space-y-6" onSubmit={handleSubmit}>
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <Label htmlFor="firstName">First Name</Label>
                       <Input
