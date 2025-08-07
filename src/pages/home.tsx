@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollSmoother, ScrollTrigger } from "gsap/all";
 import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import { AboutSection } from "../components/about-section";
 import { ActivitiesSection } from "../components/activities-section";
 import { ContactSection } from "../components/contact-section";
@@ -19,6 +20,7 @@ export default function Home() {
   const smoothContentRef = useRef<HTMLDivElement>(null);
   const mainContentRef = useRef<HTMLDivElement>(null);
   const landingRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
 
   useEffect(() => {
     // Initialize ScrollSmoother
@@ -35,36 +37,49 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    // Restore scroll position when returning to home
+    const savedScrollPosition = sessionStorage.getItem('homeScrollPosition');
+    if (savedScrollPosition) {
+      // Small delay to ensure page is loaded
+      setTimeout(() => {
+        window.scrollTo({
+          top: parseInt(savedScrollPosition),
+          behavior: 'auto', // Use 'auto' for immediate positioning
+        });
+        // Clear the saved position
+        sessionStorage.removeItem('homeScrollPosition');
+      }, 100);
+    }
+  }, [location.pathname]);
+
   useGSAP(() => {
-    // Create a subtle enhancement that's triggered by the flower stem
-    // Content is visible from start but gets enhanced when flower completes
-    const enhancementTl = gsap.timeline();
-    
+    // Content is at full opacity from the start
+    gsap.set(mainContentRef.current, {
+      opacity: 1,
+    });
+
+    // Create a subtle enhancement when flower stem completes
+    // This is purely visual enhancement, not functional gating
     ScrollTrigger.create({
       trigger: landingRef.current,
-      start: "160% 20%", // When stem is almost complete
-      end: "170% 20%", // When stem completes
-      scrub: 1,
+      start: "170% 20%", // Exactly when stem completes
+      toggleActions: "play none none none",
       markers: false,
-      animation: enhancementTl,
-    });
-
-    // Content starts slightly faded but fully functional
-    gsap.set(mainContentRef.current, {
-      opacity: 0.7,
-    });
-
-    // Enhanced reveal when flower stem reaches the content
-    enhancementTl.to(mainContentRef.current, {
-      opacity: 1,
-      scale: 1.02,
-      duration: 0.5,
-      ease: "power2.out",
-    })
-    .to(mainContentRef.current, {
-      scale: 1,
-      duration: 0.3,
-      ease: "power2.out",
+      onEnter: () => {
+        // Subtle "bloom" effect when stem reaches content
+        gsap.timeline()
+          .to(mainContentRef.current, {
+            scale: 1.01,
+            duration: 0.3,
+            ease: "power2.out",
+          })
+          .to(mainContentRef.current, {
+            scale: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          });
+      },
     });
 
     // Normal scroll-triggered animations for sections
