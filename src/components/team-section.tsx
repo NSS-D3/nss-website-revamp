@@ -28,11 +28,11 @@ export function TeamSection() {
   return (
     <section
       id="team"
-      className="py-12 sm:py-16 lg:py-20 scroll-mt-20 bg-gradient-to-br from-gray-50 to-blue-50"
+      className="py-12 sm:py-16 lg:py-20 scroll-mt-20 #bdaeedff bg-[#bdaeedff] from-gray-50 to-blue-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 mb-4">
             Our Team
           </h2>
           <div className="w-16 sm:w-20 lg:w-24 h-1 gradient-bg mx-auto mb-4 sm:mb-6"></div>
@@ -44,7 +44,7 @@ export function TeamSection() {
 
         {/* Professors Section */}
         <div className="mb-12 sm:mb-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-6 sm:mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 font-serif mb-6 sm:mb-8">
             Professors
           </h3>
 
@@ -101,7 +101,7 @@ export function TeamSection() {
           {/* Programme Officers */}
           {programmeOfficers.length > 0 && (
             <div className="mb-8 sm:mb-12">
-              <h4 className="text-lg sm:text-xl font-semibold text-center text-gray-800 mb-4 sm:mb-6">
+              <h4 className="text-lg sm:text-xl font-serif font-semibold text-center text-gray-800 mb-4 sm:mb-6">
                 Programme Officers
               </h4>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -150,7 +150,7 @@ export function TeamSection() {
 
         {/* Office Bearers */}
         <div className="mb-12 sm:mb-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-6 sm:mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 font-serif  mb-6 sm:mb-8">
             Office Bearers
           </h3>
 
@@ -171,7 +171,7 @@ export function TeamSection() {
           {/* Department Coordinators */}
           {coordinators.length > 0 && (
             <div>
-              <h4 className="text-lg sm:text-xl font-semibold text-center text-gray-800 mb-4 sm:mb-6">
+              <h4 className="text-lg  font-serif sm:text-xl font-semibold text-center text-gray-800 mb-4 sm:mb-6">
                 Department Coordinators
               </h4>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
