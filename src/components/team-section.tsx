@@ -32,7 +32,9 @@ export function TeamSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Our Team</h2>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Our Team
+          </h2>
           <div className="w-16 sm:w-20 lg:w-24 h-1 gradient-bg mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             Meet the dedicated team members who lead our community service
@@ -75,9 +77,15 @@ export function TeamSection() {
                         </p>
                         {faculty.email && (
                           <a href={`mailto:${faculty.email}`} className="block">
-                            <Button variant="ghost" size="sm" className="mt-2 text-xs sm:text-sm">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="mt-2 text-xs sm:text-sm"
+                            >
                               <i className="fas fa-envelope mr-2"></i>
-                              <span className="hidden sm:inline">{faculty.email}</span>
+                              <span className="hidden sm:inline">
+                                {faculty.email}
+                              </span>
                               <span className="sm:hidden">Email</span>
                             </Button>
                           </a>
@@ -118,9 +126,15 @@ export function TeamSection() {
                         </p>
                         {officer.email && (
                           <a href={`mailto:${officer.email}`} className="block">
-                            <Button variant="ghost" size="sm" className="mt-2 text-xs">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="mt-2 text-xs"
+                            >
                               <i className="fas fa-envelope mr-1 sm:mr-2"></i>
-                              <span className="hidden lg:inline">{officer.email}</span>
+                              <span className="hidden lg:inline">
+                                {officer.email}
+                              </span>
                               <span className="lg:hidden">Contact</span>
                             </Button>
                           </a>
@@ -145,7 +159,7 @@ export function TeamSection() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
                 {leadershipTeam.map((member, index) => (
                   <TeamMemberCard
-                    key={member.position}
+                    key={Math.random()}
                     member={member}
                     index={index}
                   />
@@ -163,7 +177,7 @@ export function TeamSection() {
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 {coordinators.map((coordinator, index) => (
                   <TeamMemberCard
-                    key={coordinator.position}
+                    key={Math.random()}
                     member={coordinator}
                     index={index}
                   />

@@ -1,7 +1,7 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import { useMobileMenu } from "../hooks/use-mobile-menu";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { useLocation, useNavigate } from "react-router-dom";
 
 const navigationLinks = [
   { href: "/", label: "Home", isSection: false },
@@ -9,7 +9,7 @@ const navigationLinks = [
   { href: "#activities", label: "Departments", isSection: true },
   { href: "#events", label: "Events", isSection: true },
   { href: "#team", label: "Team", isSection: true },
-  
+
   { href: "/gallery", label: "Gallery", isSection: false },
   { href: "#contact", label: "Contact Us", isSection: true },
 ];
@@ -22,8 +22,9 @@ export function Navigation() {
   const handleLinkClick = (href: string, isSection: boolean) => {
     if (isSection) {
       // If we're not on the home page, navigate to home first
-      if (location.pathname !== '/') {
-        navigate('/', { replace: true });
+      if (location.pathname !== "/") {
+        navigate("/", { replace: true });
+        console.log(location.pathname);
         // Wait for navigation to complete, then scroll
         setTimeout(() => {
           scrollToSection(href);
@@ -39,13 +40,13 @@ export function Navigation() {
   };
 
   const scrollToSection = (href: string) => {
-    const sectionId = href.replace('#', '');
+    const sectionId = href.replace("#", "");
     const element = document.getElementById(sectionId);
     if (element) {
       // Use CSS scroll-margin for better positioning
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
@@ -55,8 +56,8 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
           {/* Logo */}
-          <button 
-            onClick={() => handleLinkClick('/', false)}
+          <button
+            onClick={() => handleLinkClick("/", false)}
             className="flex items-center space-x-2 lg:space-x-3 hover:opacity-80 transition-opacity cursor-pointer group"
           >
             <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
@@ -67,8 +68,12 @@ export function Navigation() {
               />
             </div>
             <div className="hidden xs:block">
-              <h1 className="text-sm sm:text-lg lg:text-xl font-bold text-white group-hover:text-gray-100 transition-colors">NSS</h1>
-              <p className="text-xs lg:text-sm text-white/90 group-hover:text-gray-200 transition-colors leading-none">BITS Pilani</p>
+              <h1 className="text-sm sm:text-lg lg:text-xl font-bold text-white group-hover:text-gray-100 transition-colors">
+                NSS
+              </h1>
+              <p className="text-xs lg:text-sm text-white/90 group-hover:text-gray-200 transition-colors leading-none">
+                BITS Pilani
+              </p>
             </div>
           </button>
 
@@ -89,8 +94,8 @@ export function Navigation() {
           <div className="lg:hidden" data-mobile-menu>
             <Sheet open={isOpen} onOpenChange={toggle}>
               <SheetTrigger asChild>
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="sm"
                   className="text-white hover:bg-white/10 p-2"
                 >
@@ -121,7 +126,11 @@ export function Navigation() {
                       }}
                       className="block w-full px-4 py-3 text-left text-gray-700 hover:text-blue-800 hover:bg-blue-50 rounded-lg font-medium transition-colors duration-200 border border-transparent hover:border-blue-200"
                     >
-                      <i className={`fas fa-${link.isSection ? 'anchor' : 'external-link-alt'} mr-3 text-sm text-gray-500`}></i>
+                      <i
+                        className={`fas fa-${
+                          link.isSection ? "anchor" : "external-link-alt"
+                        } mr-3 text-sm text-gray-500`}
+                      ></i>
                       {link.label}
                     </button>
                   ))}
