@@ -168,9 +168,9 @@ export function EventsSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Events</h2>
+          <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">Events</h2>
           <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Stay updated with our latest events, workshops, and community
             service opportunities.
           </p>

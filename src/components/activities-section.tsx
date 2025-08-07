@@ -48,18 +48,18 @@ export function ActivitiesSection() {
             >
               <Dialog>
                 <DialogTrigger asChild>
-                  <Card className="card-hover  cursor-pointer group h-full">
+                  <Card className="card-hover  bg-[#2ba49c38] flex flex-col cursor-pointer group h-full">
                     <CardContent className="p-6 text-center">
                       <div
-                        className={`w-16 h-16 bg-gradient-to-r ${dept.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                        className={`w-16 h-16 } rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
                       >
-                        <i className={`${dept.icon} text-white text-xl`}></i>
+                        <i className={`${dept.icon} text-white text-3xl`}></i>
                       </div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h4 className="text-lg font-semibold font-serif text-white mb-2 group-hover:text-gray-400 transition-colors">
                         {dept.name}
                       </h4>
                       <p
-                        className="text-sm text-gray-600 line-clamp-3"
+                        className="text-sm text-gray-300 line-clamp-3"
                         style={{ whiteSpace: "pre-line" }}
                       >
                         {dept.description}
