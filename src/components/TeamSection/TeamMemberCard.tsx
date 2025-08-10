@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { TeamMember } from "../../lib/team";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
@@ -11,13 +10,7 @@ type TeamMemberCardProps = {
 
 const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="h-full"
-    >
+    <div className="h-full">
       <Card className="overflow-hidden card-hover flex flex-col h-full transition-all duration-300 hover:shadow-lg">
         <div className="w-full h-48 sm:h-56 lg:h-64 bg-gray-200 flex items-center justify-center shrink-0">
           <Avatar className="h-full w-full rounded-none">
@@ -64,7 +57,7 @@ const TeamMemberCard = ({ member, index }: TeamMemberCardProps) => {
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 

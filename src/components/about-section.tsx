@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { OBJECTIVES } from "../lib/constants";
 import { Card, CardContent } from "./ui/card";
 
@@ -23,28 +22,16 @@ export function AboutSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center mb-12 sm:mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.5 }}
-            className="order-2 lg:order-1"
-          >
+          <div className="order-2 lg:order-1">
             <img
             style={{ borderRadius: "1rem" , boxShadow: "0 40px 20px rgba(0, 0, 0, 0.1)"}}
               src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
               alt="Students participating in tree planting environmental initiative"
               className="rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl w-full h-auto"
             />
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="order-1 lg:order-2"
-          >
+          <div className="order-1 lg:order-2">
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-gray-900 mb-4 sm:mb-6">
               Our Mission
             </h3>
@@ -67,19 +54,13 @@ export function AboutSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Objectives Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {OBJECTIVES.map((objective, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
+            <div key={index}>
               <Card className="bg-[#e2c19aff] border-0 card-hover h-full">
                 <CardContent className="p-6 sm:p-8">
                   <div
@@ -97,7 +78,7 @@ export function AboutSection() {
                   </p>
                 </CardContent>
               </Card>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

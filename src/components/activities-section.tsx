@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { IMPACT_STATS } from "../lib/constants";
 import { departments } from "../lib/departments";
 import { Badge } from "./ui/badge";
@@ -34,17 +33,11 @@ export function ActivitiesSection() {
           {departments
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((dept, index) => (
-            <motion.div
+            <div
               key={dept.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
               onClick={() => {
                 window.location.href = `/${dept.id}`;
               }}
-
-              
             >
               <Dialog>
                 <DialogTrigger asChild>
@@ -152,7 +145,7 @@ export function ActivitiesSection() {
                   </div>
                 </DialogContent>*/}
               </Dialog>
-            </motion.div>
+            </div>
 
           )
           )}
@@ -161,12 +154,7 @@ export function ActivitiesSection() {
         </div>
 
         {/* Impact Statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div>
           <Card className="shadow-xl border-0">
             <CardContent className="p-8 lg:p-12">
               <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
@@ -184,7 +172,7 @@ export function ActivitiesSection() {
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

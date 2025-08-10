@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { TEAM_POSITIONS } from "../lib/constants";
 import { professors, teamMembers } from "../lib/team";
 import TeamMemberCard from "./TeamSection/TeamMemberCard";
@@ -56,12 +55,8 @@ export function TeamSection() {
               </h4>
               <div className="flex justify-center">
                 {facultyIncharge.map((faculty, index) => (
-                  <motion.div
+                  <div
                     key={faculty.name}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
                     className="w-full max-w-sm"
                   >
                     <Card className="card-hover">
@@ -91,8 +86,8 @@ export function TeamSection() {
                           </a>
                         )}
                       </CardContent>
-                    </Card>
-                  </motion.div>
+                  </Card>
+                  </div>
                 ))}
               </div>
             </div>
@@ -106,13 +101,7 @@ export function TeamSection() {
               </h4>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {programmeOfficers.map((officer, index) => (
-                  <motion.div
-                    key={officer.name}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
+                  <div key={officer.name}>
                     <Card className="card-hover h-full">
                       <CardContent className="p-4 sm:p-6 text-center">
                         <div className="w-10 h-10 sm:w-12 sm:h-12 bg-community-green/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
@@ -141,7 +130,7 @@ export function TeamSection() {
                         )}
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>

@@ -53,72 +53,29 @@ export default function Home() {
         }
       }, 300);
     } else {
-      // Restore scroll position when returning to home
-      const savedScrollPosition = sessionStorage.getItem('homeScrollPosition');
-      if (savedScrollPosition) {
-        // Small delay to ensure page is loaded
-        setTimeout(() => {
-          window.scrollTo({
-            top: parseInt(savedScrollPosition),
-            behavior: 'auto', // Use 'auto' for immediate positioning
-          });
-          // Clear the saved position
-          sessionStorage.removeItem('homeScrollPosition');
-        }, 100);
-      }
+      // Clear any saved scroll position to always start at top
+      sessionStorage.removeItem('homeScrollPosition');
+      // Ensure we start at the top of the page
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto'
+        });
+      }, 100);
     }
   }, [location.pathname, location.hash]);
 
   useGSAP(() => {
-    // Content is at full opacity from the start
+    // Content is at full opacity from the start - no animations
     gsap.set(mainContentRef.current, {
       opacity: 1,
     });
-
-    // Create a subtle enhancement when flower stem completes
-    // This is purely visual enhancement, not functional gating
-    ScrollTrigger.create({
-      trigger: landingRef.current,
-      start: "170% 20%", // Exactly when stem completes
-      toggleActions: "play none none none",
-      markers: false,
-      onEnter: () => {
-        // Subtle "bloom" effect when stem reaches content
-        gsap.timeline()
-          .to(mainContentRef.current, {
-            scale: 1.01,
-            duration: 0.3,
-            ease: "power2.out",
-          })
-          .to(mainContentRef.current, {
-            scale: 1,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-      },
-    });
-
-    // Normal scroll-triggered animations for sections
+    
+    // Set all sections to be visible immediately
     const sections = gsap.utils.toArray(".content-section");
-    sections.forEach((section: any, index) => {
-      gsap.fromTo(section, 
-        {
-          opacity: 0,
-          y: 20,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-            markers: false,
-          },
-        }
-      );
+    gsap.set(sections, {
+      opacity: 1,
+      y: 0,
     });
   }, []);
 
