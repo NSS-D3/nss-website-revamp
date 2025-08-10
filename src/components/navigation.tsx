@@ -1,7 +1,12 @@
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMobileMenu } from "../hooks/use-mobile-menu";
+import { useScrollSmoother } from "../hooks/use-scroll-smoother";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const navigationLinks = [
   { href: "/", label: "Home", isSection: false },
@@ -9,13 +14,13 @@ const navigationLinks = [
   { href: "#activities", label: "Departments", isSection: true },
   { href: "#events", label: "Events", isSection: true },
   { href: "#team", label: "Team", isSection: true },
-
-  { href: "/gallery", label: "Gallery", isSection: false },
+  // { href: "/gallery", label: "Gallery", isSection: false },
   { href: "#contact", label: "Contact Us", isSection: true },
 ];
 
 export function Navigation() {
   const { isOpen, toggle, close } = useMobileMenu();
+  const { smootherRef } = useScrollSmoother();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -24,11 +29,10 @@ export function Navigation() {
       // If we're not on the home page, navigate to home first
       if (location.pathname !== "/") {
         navigate("/", { replace: true });
-        console.log(location.pathname);
         // Wait for navigation to complete, then scroll
         setTimeout(() => {
           scrollToSection(href);
-        }, 200);
+        }, 300);
       } else {
         // Already on home page, just scroll
         scrollToSection(href);
@@ -43,11 +47,21 @@ export function Navigation() {
     const sectionId = href.replace("#", "");
     const element = document.getElementById(sectionId);
     if (element) {
-      // Use CSS scroll-margin for better positioning
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      const offset = 80; // Account for fixed navbar height
+
+      // Use ScrollSmoother if available, otherwise fallback to GSAP scrollTo
+      if (smootherRef?.current) {
+        smootherRef.current.scrollTo(element, true);
+      } else {
+        gsap.to(window, {
+          duration: 1.2,
+          scrollTo: {
+            y: element,
+            // offsetY: offset,
+          },
+          ease: "power2.inOut",
+        });
+      }
     }
   };
 
