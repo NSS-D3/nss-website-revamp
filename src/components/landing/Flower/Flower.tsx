@@ -47,7 +47,7 @@ const Flower = forwardRef<HTMLDivElement, FlowerProps>(
               trigger: `.${styles.container}`,
               start: "44% 25%",
               end: "170% 25%",
-              markers: true,
+              markers: false,
               scrub: 2,
             },
             strokeDashoffset: 0,
