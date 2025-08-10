@@ -24,6 +24,12 @@
     height: auto;
     align-self: flex-end;
     transform: translateX(38%) translateY(95%);
+    
+    path {
+      // Ensure path is initially invisible to prevent flash
+      stroke-dasharray: 781.4827880859375;
+      stroke-dashoffset: 781.4827880859375;
+    }
   }
 
   .flower {
