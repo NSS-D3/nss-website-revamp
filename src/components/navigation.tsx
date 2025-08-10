@@ -28,13 +28,14 @@ export function Navigation() {
     if (isSection) {
       // If we're not on the home page, navigate to home first
       if (location.pathname !== "/") {
-        navigate("/", { replace: true });
+        navigate("/" + href, { replace: true });
         // Wait for navigation to complete, then scroll
         setTimeout(() => {
           scrollToSection(href);
-        }, 300);
+        }, 500);
       } else {
-        // Already on home page, just scroll
+        // Already on home page, just scroll directly
+        // Do NOT update the URL to prevent triggering useEffect
         scrollToSection(href);
       }
     } else {
@@ -135,8 +136,11 @@ export function Navigation() {
                     <button
                       key={link.href}
                       onClick={() => {
-                        handleLinkClick(link.href, link.isSection);
+                        // Close menu first, then navigate/scroll after a delay
                         close();
+                        setTimeout(() => {
+                          handleLinkClick(link.href, link.isSection);
+                        }, 350); // Wait for sheet close animation (300ms) + buffer
                       }}
                       className="block w-full px-4 py-3 text-left text-gray-700 hover:text-blue-800 hover:bg-blue-50 rounded-lg font-medium transition-colors duration-200 border border-transparent hover:border-blue-200"
                     >

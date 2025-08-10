@@ -42,8 +42,9 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // Handle hash navigation on page load
+    // Handle hash navigation on page load and route changes
     const hash = location.hash;
+    
     if (hash && smootherRef.current) {
       setTimeout(() => {
         const element = document.getElementById(hash.replace('#', ''));
@@ -52,16 +53,22 @@ export default function Home() {
           smootherRef.current?.scrollTo(element, true, "top -=" + offset);
         }
       }, 300);
-    } else {
-      // Clear any saved scroll position to always start at top
-      sessionStorage.removeItem('homeScrollPosition');
-      // Ensure we start at the top of the page
-      setTimeout(() => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'auto'
-        });
-      }, 100);
+    } else if (location.pathname === "/" && !hash) {
+      // Only scroll to top on page refresh/initial load
+      // Check if this is a genuine page load (not navigation within SPA)
+      const navigationEntries = performance.getEntriesByType('navigation') as PerformanceNavigationTiming[];
+      const isPageReload = navigationEntries.length > 0 && navigationEntries[0].type === 'reload';
+      const isInitialLoad = !sessionStorage.getItem('hasVisited');
+      
+      if (isPageReload || isInitialLoad) {
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'auto'
+          });
+        }, 100);
+        sessionStorage.setItem('hasVisited', 'true');
+      }
     }
   }, [location.pathname, location.hash]);
 
