@@ -59,15 +59,31 @@ export const SponsorshipCollaboration = () => {
     color: "from-indigo-500 to-purple-500",
     members: coordinators.filter((c) => c.position.includes("Sponsorship")),
     details: {
-      mission: "To build sustainable partnerships and secure resources for NSS initiatives through strategic collaborations.",
+      mission: "The primary aim of the Department of Sponsorship & Collaboration (DeSCo) at NSS BITS Pilani is to secure and manage financial and in-kind support essential for the smooth execution of all major NSS events. Through consistent efforts in outreach and corporate engagement, the department ensures that no event ever faces setbacks due to a lack of resources. The ultimate goal is to enable impactful and large-scale social initiatives without any financial constraints.",
       activities: [
         {
-          title: "Corporate partnership development",
-          description: "Developing partnerships with corporate organizations to secure funding and resources.",
+          title: "Raising funds for NSS flagship events",
+description: `To raise adequate sponsorship funds and resources to support NSS BITS Pilani’s annual flagship events, including-
+
+Junoon – An inclusive fest for specially-abled children.
+
+
+Oasis: Shop for a Smile – A fundraising and awareness initiative held during the college’s cultural fest.
+
+Blood Donation Camp (BDC) – A large-scale medical and awareness event encouraging voluntary blood donation.
+
+Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on social issues.
+.`,
         },
         {
-          title: "Grant application and management",
-          description: "Applying for and managing grants to fund NSS initiatives.",
+          title: "Long term collaborations",
+          description: "To establish long-term collaborations with corporate entities, non-profits, and local businesses that align with the vision and values of NSS.",
+        },
+        {title:"Seamless operational flow",
+          description: "To maintain a seamless operational flow for all events by ensuring timely access to financial and logistical support.",
+        },
+        {title: "Skill promotion",
+          description: "To promote professionalism, negotiation, and communication skills among students by actively involving them in real-world sponsorship and collaboration processes.",
         },
       ]
     }
