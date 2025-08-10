@@ -164,43 +164,6 @@ export function DepartmentPage() {
               </div>
             </motion.div>
 
-            {/* Coordinators Section */}
-            {department.members.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="mb-16"
-              >
-                <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Coordinators</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {department.members.map((member, index) => (
-                    <motion.div
-                      key={member.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <Card className="text-center hover:shadow-lg transition-shadow duration-300">
-                        <CardContent className="p-6">
-                          <div className={`w-16 h-16 bg-gradient-to-r ${department.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                            <i className="fas fa-user text-white text-xl"></i>
-                          </div>
-                          <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                            {member.name}
-                          </h4>
-                          <p className="text-sm text-gray-600">
-                            {member.position}
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
 
             {/* Back to Departments Button */}
             <div className="text-center">
