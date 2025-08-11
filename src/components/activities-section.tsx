@@ -30,7 +30,7 @@ export function ActivitiesSection() {
                 window.location.href = `/${dept.id}`;
               }}
             >
-              <Card className="card-hover  bg-[#2ba49c38] flex flex-col cursor-pointer group h-full">
+              <Card className="card-hover  bg-gradient-to-br from-[#0d5752]/80 to-[#0d5752]/90 backdrop-blur-lg border border-[#0d5752]/20 rounded-xl flex flex-col cursor-pointer group h-full">
                 <CardContent className="p-6 text-center">
                   <div
                     className={`w-16 h-16 } rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
