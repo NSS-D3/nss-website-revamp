@@ -13,7 +13,7 @@ export function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-black mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-black mb-4">
             About NSS BITS Pilani
           </h2>
           <div className="w-16 sm:w-20 lg:w-24 h-1 gradient-bg mx-auto mb-4 sm:mb-6"></div>
@@ -43,7 +43,7 @@ export function AboutSection() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-black mb-4 sm:mb-6">
+            <h3 className="text-2xl sm:text-3xl font-heading font-bold text-black mb-4 sm:mb-6">
               Our Mission
             </h3>
             <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
@@ -84,7 +84,7 @@ export function AboutSection() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl flex items-center justify-center mb-4 sm:mb-6 bg-white/20 backdrop-blur-sm group-hover:bg-white/40 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
                     <i className={`${objective.icon} text-black text-xl sm:text-3xl transition-all duration-300 group-hover:scale-110`}></i>
                   </div>
-                  <h4 className="text-lg sm:text-xl font-serif font-semibold text-gray-900 mb-3 sm:mb-4 group-hover:text-gray-800 transition-colors duration-300">
+                  <h4 className="text-lg sm:text-xl font-heading font-semibold text-gray-900 mb-3 sm:mb-4 group-hover:text-gray-800 transition-colors duration-300">
                     {objective.title}
                   </h4>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed group-hover:text-gray-600 transition-colors duration-300">

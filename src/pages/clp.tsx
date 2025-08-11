@@ -90,7 +90,7 @@ export const ComputerLiteracyProgramme = () => {
   };
 
   return (
-    <div className="min-h-screen font-serif bg-[#FFF5F4]">
+    <div className="min-h-screen font-heading bg-[#FFF5F4]">
       
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">

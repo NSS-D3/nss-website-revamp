@@ -19,7 +19,7 @@ export const Junoon = () => {
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
   
   const event = events.find(e => e.title === "Junoon");
-  if (!event) return <div className="text-center py-20 font-serif">Event not found</div>;
+  if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
 
   // Parse markdown content to extract activities
   const parseActivities = (content: string): Activity[] => {
@@ -56,7 +56,7 @@ export const Junoon = () => {
   };
 
   return (
-    <div className="min-h-screen font-serif bg-[#FFF5F4]">
+    <div className="min-h-screen font-heading bg-[#FFF5F4]">
       {/* Elegant Header */}
       <header className="py-16 bg-[#ffc3c0] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/events/soft-texture.png')]"></div>

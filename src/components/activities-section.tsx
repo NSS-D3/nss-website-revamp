@@ -11,7 +11,7 @@ export function ActivitiesSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white font-serif mb-4">Departments</h2>
+          <h2 className="text-4xl font-bold text-white font-heading mb-4">Departments</h2>
           <div className="w-24 h-1 gradient-bg mx-auto mb-6"></div>
           <p className="text-xl  text-white max-w-3xl mx-auto">
             Discover our specialized departments and their dedicated work in
@@ -37,7 +37,7 @@ export function ActivitiesSection() {
                   >
                     <i className={`${dept.icon} text-white text-3xl`}></i>
                   </div>
-                  <h4 className="text-lg font-semibold font-serif text-white mb-2 group-hover:text-gray-400 transition-colors">
+                  <h4 className="text-lg font-semibold font-heading text-white mb-2 group-hover:text-gray-400 transition-colors">
                     {dept.name}
                   </h4>
                   <p

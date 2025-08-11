@@ -1,11 +1,10 @@
-import { ScrollSmoother, ScrollTrigger, ScrollToPlugin } from "gsap/all";
 import gsap from "gsap";
+import { ScrollSmoother, ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { AboutSection } from "../components/about-section";
 import { ActivitiesSection } from "../components/activities-section";
 import { ContactSection } from "../components/contact-section";
-import { EventsSection } from "../components/events-section";
 import { Footer } from "../components/footer";
 import Landing from "../components/landing/landing";
 import { Navigation } from "../components/navigation";
@@ -18,10 +17,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 export default function Home() {
   // Only show preloader on first visit or page refresh
   const [isPreloading, setIsPreloading] = useState(() => {
-    const hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore');
+    const hasLoadedBefore = sessionStorage.getItem("hasLoadedBefore");
     return !hasLoadedBefore;
   });
-  
+
   const smoothWrapperRef = useRef<HTMLDivElement>(null);
   const smoothContentRef = useRef<HTMLDivElement>(null);
   const mainContentRef = useRef<HTMLDivElement>(null);
@@ -31,7 +30,7 @@ export default function Home() {
 
   const handlePreloadComplete = () => {
     setIsPreloading(false);
-    sessionStorage.setItem('hasLoadedBefore', 'true');
+    sessionStorage.setItem("hasLoadedBefore", "true");
   };
 
   useEffect(() => {
@@ -43,7 +42,7 @@ export default function Home() {
       effects: true,
       smoothTouch: 0.1,
     });
-    
+
     smootherRef.current = smoother;
 
     return () => {
@@ -55,10 +54,10 @@ export default function Home() {
   useEffect(() => {
     // Handle hash navigation on page load and route changes
     const hash = location.hash;
-    
+
     if (hash && smootherRef.current) {
       setTimeout(() => {
-        const element = document.getElementById(hash.replace('#', ''));
+        const element = document.getElementById(hash.replace("#", ""));
         if (element) {
           const offset = 80; // Account for fixed navbar
           smootherRef.current?.scrollTo(element, true, "top -=" + offset);
@@ -67,30 +66,32 @@ export default function Home() {
     } else if (location.pathname === "/" && !hash) {
       // Only scroll to top on page refresh/initial load
       // Check if this is a genuine page load (not navigation within SPA)
-      const navigationEntries = performance.getEntriesByType('navigation') as PerformanceNavigationTiming[];
-      const isPageReload = navigationEntries.length > 0 && navigationEntries[0].type === 'reload';
-      const isInitialLoad = !sessionStorage.getItem('hasVisited');
-      
+      const navigationEntries = performance.getEntriesByType(
+        "navigation"
+      ) as PerformanceNavigationTiming[];
+      const isPageReload =
+        navigationEntries.length > 0 && navigationEntries[0].type === "reload";
+      const isInitialLoad = !sessionStorage.getItem("hasVisited");
+
       if (isPageReload || isInitialLoad) {
         setTimeout(() => {
           window.scrollTo({
             top: 0,
-            behavior: 'auto'
+            behavior: "auto",
           });
         }, 100);
-        sessionStorage.setItem('hasVisited', 'true');
+        sessionStorage.setItem("hasVisited", "true");
       }
     }
   }, [location.pathname, location.hash]);
-
 
   return (
     <>
       {/* Show preloader only on initial load */}
       {isPreloading && <Preloader onComplete={handlePreloadComplete} />}
-      
+
       {/* Main content - always rendered but hidden during preload */}
-      <div style={{ visibility: isPreloading ? 'hidden' : 'visible' }}>
+      <div style={{ visibility: isPreloading ? "hidden" : "visible" }}>
         <ScrollSmootherProvider smootherRef={smootherRef}>
           <div id="smooth-wrapper" ref={smoothWrapperRef}>
             <div id="smooth-content" ref={smoothContentRef}>
@@ -98,8 +99,8 @@ export default function Home() {
                 <Landing />
                 <Navigation />
               </div>
-              <div 
-                className="min-h-screen bg-gray-50 z-20 relative" 
+              <div
+                className="min-h-screen bg-gray-50 z-20 relative"
                 ref={mainContentRef}
               >
                 <div className="content-section">
@@ -108,13 +109,13 @@ export default function Home() {
                 <div className="content-section">
                   <ActivitiesSection />
                 </div>
-                <div className="content-section">
+                {/* <div className="content-section">
                   <EventsSection />
-                </div>
+                </div> */}
                 <div className="content-section">
                   <TeamSection />
                 </div>
-                
+
                 <div className="content-section">
                   <ContactSection />
                 </div>

@@ -64,20 +64,12 @@ export function Navigation() {
             onClick={() => handleLinkClick("/", false)}
             className="flex items-center space-x-2 lg:space-x-3 hover:opacity-80 transition-opacity cursor-pointer group"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
               <img
                 src="/logo/logo.png"
                 alt="NSS Logo"
                 className="w-full h-full object-contain"
               />
-            </div>
-            <div className="hidden xs:block">
-              <h1 className="text-sm sm:text-lg lg:text-xl font-bold text-white group-hover:text-gray-100 transition-colors">
-                NSS
-              </h1>
-              <p className="text-xs lg:text-sm text-white/90 group-hover:text-gray-200 transition-colors leading-none">
-                BITS Pilani
-              </p>
             </div>
           </button>
 
