@@ -39,11 +39,10 @@ export const Parisodh = () => {
   
   // Sample gallery data
   const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/tree-plantation.jpg', alt: 'Tree plantation drive', category: 'plantation' },
-    { id: 2, src: '/images/waste-segregation.jpg', alt: 'Waste segregation workshop', category: 'recycling' },
-    { id: 3, src: '/images/cleanup-drive.jpg', alt: 'Community cleanup drive', category: 'cleanup' },
-    { id: 4, src: '/images/eco-workshop.jpg', alt: 'Environmental awareness workshop', category: 'education' },
-  ];
+    { id: 1, src: '/events/parisodh1.jpg', alt: 'Tree plantation drive', category: 'plantation' },
+    { id: 2, src: '/events/parisodh2.jpg', alt: 'RO water filtration', category: 'recycling' },
+    { id: 3, src: '/events/parisodh3.jpg', alt: 'Community cleanup drive', category: 'cleanup' },
+  ]
 
   //  coordinators data
   const coordinators: Coordinator[] = [

@@ -62,12 +62,24 @@ export const Events = () => {
       mission: "To create impactful events that raise social awareness and engage the community in meaningful activities.",
       activities: [
         {
-          title: "Annual festivals and cultural events",
+          title: "Junoon",
           description: "Organizing annual festivals and cultural events to promote social awareness.",
         },
         {
-          title: "Awareness campaigns and workshops",
+          title: "Blood Donation Camp",
           description: "Organizing awareness campaigns and workshops on various social issues.",
+        },
+        {
+          title: "Shop for Smile",
+          description: "Organizing awareness campaigns and workshops on various social issues.",
+        },
+        {
+          title: "Conferencia de Youth",
+          description: "Organizing awareness campaigns and workshops on various social issues.",
+        },
+        {
+          title: "Old Notebook Collection Drive (ONCD)",
+          description: "The Old Notebook Collection Drive (ONCD) is an annual NSS initiative conducted at the end of every academic year to collect used notebooks from students across campus. These notebooks are then sent for recycling, helping reduce paper waste and promote eco-friendly practices within the BITS Pilani community.",
         },
       ]
     }

@@ -88,10 +88,7 @@ export function Footer() {
                 <i className="fas fa-envelope mr-2 text-sm"></i>
                 <span className="text-sm">nss@pilani.bits-pilani.ac.in</span>
               </li>
-              <li className="flex items-center">
-                <i className="fas fa-phone mr-2 text-sm"></i>
-                <span className="text-sm">+91 1596 242227</span>
-              </li>
+             
               <li className="flex items-start">
                 <i className="fas fa-map-marker-alt mr-2 text-sm mt-1"></i>
                 <span className="text-sm">BITS Pilani, Rajasthan 333031</span>

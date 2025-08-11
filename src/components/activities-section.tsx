@@ -20,7 +20,7 @@ export function ActivitiesSection() {
         </div>
 
         {/* Departments Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3  justify-center align-center gap-6 mb-12">
           {departments
           .sort((a, b) => a.name.localeCompare(b.name))
           .map((dept, index) => (

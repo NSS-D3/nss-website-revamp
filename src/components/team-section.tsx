@@ -18,7 +18,7 @@ export function TeamSection() {
   );
 
   const facultyIncharge = professors.filter(
-    (prof) => prof.position === "Faculty Incharge"
+    (prof) => prof.position === "Program Coordinator"
   );
   const programmeOfficers = professors.filter(
     (prof) => prof.position === "Programme Officer"

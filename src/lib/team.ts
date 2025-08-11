@@ -125,7 +125,7 @@ export const professors: Professor[] = [
   {
     
     name: "Meghana Tare",
-    position: "Faculty Incharge",
+    position: "Program Coordinator",
     email: "meghana.tare@pilani.bits-pilani.ac.in",
     imageUrl: "/profs/meghana.png"
   },
@@ -136,7 +136,7 @@ export const professors: Professor[] = [
     imageUrl: "/profs/prashant-uday.jpg"
   },
   {
-    name: "Sudeshna M Chowdhury",
+    name: "Sudeshna Mukherjee",
     position: "Programme Officer",
     email: "sudeshna.chowdhury@pilani.bits-pilani.ac.in",
     imageUrl: "/profs/sudeshna.jpg"
@@ -165,4 +165,10 @@ export const professors: Professor[] = [
     email: "sandeep.joshi@pilani.bits-pilani.ac.in",
     imageUrl: "/profs/sandeep.jpg"
   },
+  {
+    name: "Balakumaran Chandrashekar",
+    position:"Programme Officer",
+    email:"balakumaran.c@pilani.bits-pilani.ac.in",
+    //imageUrl: "/profs/balakumaran.jpg"
+  }
 ];

@@ -101,9 +101,9 @@ export const departments = [
         "To bridge the digital divide by providing computer education and digital literacy to underserved communities.",
       activities: [
         {
-          title: "Basic computer training programs",
+          title: "Government School (GS)",
           description:
-            "Providing basic computer training to children and adults.",
+            " Students of classes 6-8th from nearby schools: Vashishth Pathak Public School, Vijay Public School, Holy Child School, CEERI Vidya, Birla School, etc came to PARC building every Monday to Saturday and they were taught basic computer applications such as Excel, Word, PowerPoint and Networking. On an average, 15-20 students regularly attended every slot, with the highest attendance being around 30. Overall, the children had a positive feedback and wish to learn from an updated syllabus in the coming semester.",
         },
         {
           title: "Digital literacy for adults",

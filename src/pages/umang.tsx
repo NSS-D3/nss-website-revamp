@@ -39,12 +39,11 @@ export const Umang = () => {
   
   
   const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/umang-scholarship.jpg', alt: 'Umang Scholarship distribution', category: 'scholarship' },
-    { id: 2, src: '/images/umang-collection.jpg', alt: 'Umang Collection event', category: 'fundraising' },
-    { id: 3, src: '/images/project-pragya.jpg', alt: 'Project Pragya stationery distribution', category: 'community' },
-    { id: 4, src: '/images/career-counselling.jpg', alt: 'Career counselling session', category: 'education' },
-    { id: 5, src: '/images/motivational-session.jpg', alt: 'Motivational session with students', category: 'mentorship' },
-    { id: 6, src: '/images/student-mentorship.jpg', alt: 'Student mentorship program', category: 'mentorship' },
+    { id: 1, src: '/events/umang1.jpg', alt: 'Umang Scholarship distribution', category: 'scholarship' },
+    { id: 2, src: '/events/umang2.jpg', alt: 'Project Pragya stationery distribution', category: 'fundraising' },
+    { id: 3, src: '/events/umang3.jpg', alt: 'Career counselling', category: 'community' },
+    { id: 4, src: '/events/umang4.jpg', alt: 'Home visit', category: 'education' },
+   
   ];
 
   //  coordinators data

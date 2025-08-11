@@ -39,15 +39,9 @@ export const School = () => {
   
   
   const galleryImages: GalleryImage[] = [
-    { id: 1, src: '/images/science-lab.jpg', alt: 'Students in science lab', category: 'academic' },
-    { id: 2, src: '/images/sports-day.jpg', alt: 'Annual sports day', category: 'sports' },
-    { id: 3, src: '/images/cultural-performance.jpg', alt: 'Cultural program', category: 'cultural' },
-    { id: 4, src: '/images/school-building.jpg', alt: 'School infrastructure', category: 'infrastructure' },
-    { id: 5, src: '/images/annual-day.jpg', alt: 'Annual day celebration', category: 'events' },
-    { id: 6, src: '/images/community-service.jpg', alt: 'NSS volunteers', category: 'community' },
-    { id: 7, src: '/images/trophies.jpg', alt: 'School achievements', category: 'achievements' },
-    { id: 8, src: '/images/teachers-workshop.jpg', alt: 'Faculty workshop', category: 'faculty' },
-    { id: 9, src: '/images/alumni-meet.jpg', alt: 'Alumni visit', category: 'alumni' },
+    { id: 1, src: '/events/school1.jpg', alt: 'Students in science lab', category: 'academic' },
+    { id: 2, src: '/events/school2.jpg', alt: 'Students in NSS building', category: 'sports' },
+
   ];
 
   //  coordinators data
