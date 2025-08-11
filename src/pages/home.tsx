@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import { AboutSection } from "../components/about-section";
 import { ActivitiesSection } from "../components/activities-section";
 import { ContactSection } from "../components/contact-section";
+import { EventsSection } from "../components/events-section";
 import { Footer } from "../components/footer";
 import Landing from "../components/landing/landing";
 import { Navigation } from "../components/navigation";
@@ -109,9 +110,9 @@ export default function Home() {
                 <div className="content-section">
                   <ActivitiesSection />
                 </div>
-                {/* <div className="content-section">
+                <div className="content-section">
                   <EventsSection />
-                </div> */}
+                </div>
                 <div className="content-section">
                   <TeamSection />
                 </div>

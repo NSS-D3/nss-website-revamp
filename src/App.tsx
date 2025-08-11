@@ -17,6 +17,10 @@ import { HealthPublicAwareness } from "./pages/healthpublicawareness";
 import { Parisodh } from "./pages/parisodh";
 import { School } from "./pages/school";
 import { Umang } from "./pages/umang";
+import BloodDonationCamp from "./pages/blood-donation-camp";
+import ConferenciaDeYouth from "./pages/conferencia-de-youth";
+import Junoon from "./pages/junoon";
+import ShopForSmile from "./pages/shop-for-smile";
 
 function App() {
   return (
@@ -50,10 +54,13 @@ function App() {
             element={<ComputerLiteracyProgramme />}
           />
           <Route path="/events" element={<Events />} />
-          {/* <Route path="/junoon" element={<Junoon />} />
+          <Route path="/junoon" element={<Junoon />} />
           <Route path="/shop-for-smile" element={<ShopForSmile />} />
           <Route path="/blood-donation-camp" element={<BloodDonationCamp />} />
-          <Route path="/conferencia-de-youth" element={<ConferenciaDeYouth />} /> */}
+          <Route
+            path="/conferencia-de-youth"
+            element={<ConferenciaDeYouth />}
+          />
         </Routes>
       </TooltipProvider>
     </QueryClientProvider>

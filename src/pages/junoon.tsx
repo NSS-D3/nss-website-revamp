@@ -69,7 +69,7 @@ export const Junoon = () => {
               {event.title}
             </h1>
             <p className="text-2xl italic font-light text-[#7a3f3e]">
-              Annual Cultural and Social Awareness Festival
+              Sports Extravaganza for Specially-Abled Children
             </p>
             <div className="mt-8 h-px w-32 mx-auto bg-[#7a3f3e] bg-opacity-50"></div>
           </div>
@@ -80,7 +80,7 @@ export const Junoon = () => {
         {/* About Section */}
         <section className="mb-20 bg-white p-10 rounded-xl shadow-md border border-[#ffc3c0]/30">
           <h2 className="text-3xl font-semibold text-[#5e2b2a] mb-8 text-center">
-            About the Festival
+            About the Event
           </h2>
           <div className="flex flex-col lg:flex-row gap-10 items-center">
             <div className="lg:w-1/2">
@@ -106,7 +106,7 @@ export const Junoon = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#5e2b2a] inline-block px-6 pb-2 border-b-2 border-[#5e2b2a]">
-              Festival Highlights
+              Event Highlights
             </h2>
           </div>
           
@@ -139,7 +139,7 @@ export const Junoon = () => {
         <section className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#5e2b2a] inline-block px-6 pb-2 border-b-2 border-[#5e2b2a]">
-              Festival Moments
+              Event Moments
             </h2>
           </div>
           
