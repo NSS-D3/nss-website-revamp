@@ -51,14 +51,11 @@ export function TeamSection() {
           {facultyIncharge.length > 0 && (
             <div className="mb-8 sm:mb-12">
               <h4 className="text-lg sm:text-xl font-semibold font-heading text-center text-gray-800 mb-4 sm:mb-6">
-                Faculty In-charge
+                Program Coordinator
               </h4>
               <div className="flex justify-center">
                 {facultyIncharge.map((faculty, index) => (
-                  <div
-                    key={faculty.name}
-                    className="w-full max-w-sm"
-                  >
+                  <div key={faculty.name} className="w-full max-w-sm">
                     <Card className="card-hover">
                       <CardContent className="p-4 sm:p-6 text-center">
                         <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
@@ -86,7 +83,7 @@ export function TeamSection() {
                           </a>
                         )}
                       </CardContent>
-                  </Card>
+                    </Card>
                   </div>
                 ))}
               </div>

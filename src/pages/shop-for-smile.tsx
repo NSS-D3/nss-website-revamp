@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { events } from '../lib/events';
 import { BackButton } from '../components/ui/back-button';
 
@@ -9,6 +10,11 @@ type Activity = {
 
 export const ShopForSmile = () => {
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
+  const navigate = useNavigate();
+  
+  const handleContactUsClick = () => {
+    navigate('/#contact');
+  };
   
   const event = events.find(e => e.title === "Shop for Smile");
   if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
@@ -150,8 +156,11 @@ export const ShopForSmile = () => {
             <p className="text-lg text-green-700 mb-6 max-w-2xl mx-auto">
               Every purchase creates positive social impact. Visit our stalls during Oasis!
             </p>
-            <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
-              Learn More
+            <button 
+              onClick={handleContactUsClick}
+              className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
+            >
+              Contact Us
             </button>
           </div>
         </section>

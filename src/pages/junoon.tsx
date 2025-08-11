@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { events } from '../lib/events';
 import { BackButton } from '../components/ui/back-button';
 
@@ -17,6 +18,11 @@ type Activity = {
 export const Junoon = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
+  const navigate = useNavigate();
+  
+  const handleContactUsClick = () => {
+    navigate('/#contact');
+  };
   
   const event = events.find(e => e.title === "Junoon");
   if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
@@ -180,15 +186,18 @@ export const Junoon = () => {
           */}
         </section>
 
-        {/* Registration CTA */}
+        {/* Contact CTA */}
         <section className="text-center mb-20">
           <div className="bg-[#ffc3c0] bg-opacity-20 p-10 rounded-xl border-2 border-[#ffc3c0]">
             <h2 className="text-3xl font-semibold text-[#5e2b2a] mb-4">Experience Junoon</h2>
             <p className="text-lg text-[#5e2b2a] mb-6 max-w-2xl mx-auto">
               Join us for this vibrant celebration of culture and social awareness.
             </p>
-            <button className="bg-[#5e2b2a] hover:bg-[#4a2221] text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
-              Learn More
+            <button 
+              onClick={handleContactUsClick}
+              className="bg-[#5e2b2a] hover:bg-[#4a2221] text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
+            >
+              Contact Us
             </button>
           </div>
         </section>

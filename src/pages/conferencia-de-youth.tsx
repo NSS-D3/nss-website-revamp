@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { events } from '../lib/events';
 import { BackButton } from '../components/ui/back-button';
 
@@ -9,6 +10,11 @@ type Activity = {
 
 export const ConferenciaDeYouth = () => {
   const [expandedActivity, setExpandedActivity] = useState<number | null>(null);
+  const navigate = useNavigate();
+  
+  const handleContactUsClick = () => {
+    navigate('/#contact');
+  };
   
   const event = events.find(e => e.title === "Conferencia de Youth");
   if (!event) return <div className="text-center py-20 font-heading">Event not found</div>;
@@ -222,10 +228,13 @@ export const ConferenciaDeYouth = () => {
           <div className="bg-gradient-to-r from-blue-100 to-indigo-100 p-10 rounded-xl border-2 border-blue-300">
             <h2 className="text-3xl font-semibold text-blue-800 mb-4">Join the Movement</h2>
             <p className="text-lg text-blue-700 mb-6 max-w-2xl mx-auto">
-              Be part of the next generation of social change leaders. Limited seats available!
+              Be part of the next generation of social change leaders.
             </p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
-              Register Now
+            <button 
+              onClick={handleContactUsClick}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105"
+            >
+              Contact Us
             </button>
           </div>
         </section>

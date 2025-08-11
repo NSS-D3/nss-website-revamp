@@ -1,11 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Navigation } from "../components/navigation";
 import { Footer } from "../components/footer";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { departments } from "../lib/departments";
 import { BackButton } from "../components/ui/back-button";
+import { ImageCarousel } from "../components/image-carousel";
 
 export function DepartmentPage() {
   const { slug } = useParams();
@@ -87,50 +88,43 @@ export function DepartmentPage() {
               </Card>
             </div>
 
-            {/* Image Gallery Section */}
-            <div className="mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Gallery</h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="group">
-                  <img
-                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                    alt={`${department.name} activities - Image 1`}
-                    className="w-full h-80 object-cover rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="group">
-                  <img
-                    src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
-                    alt={`${department.name} activities - Image 2`}
-                    className="w-full h-80 object-cover rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105"
-                  />
-                </div>
-              </div>
-            </div>
 
             {/* Activities Section */}
             <div className="mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Our Activities</h2>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {department.details.activities.map((activity, index) => (
                   <div key={index}>
                     <Card className="shadow-md hover:shadow-lg transition-shadow duration-300">
                       <CardContent className="p-6">
-                        <div className="flex items-start gap-4">
-                          <div className={`w-12 h-12 bg-gradient-to-r ${department.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                            <i className="fas fa-check-circle text-white text-lg"></i>
+                        <div className="space-y-4">
+                          {/* Activity Header */}
+                          <div className="flex items-start gap-4">
+                            <div className={`w-12 h-12 bg-gradient-to-r ${department.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                              <i className="fas fa-check-circle text-white text-lg"></i>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                                {activity.title}
+                              </h3>
+                              <p 
+                                className="text-gray-700 leading-relaxed"
+                                style={{ whiteSpace: "pre-line" }}
+                              >
+                                {activity.description}
+                              </p>
+                            </div>
                           </div>
-                          <div className="flex-1">
-                            <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                              {activity.title}
-                            </h3>
-                            <p 
-                              className="text-gray-700 leading-relaxed"
-                              style={{ whiteSpace: "pre-line" }}
-                            >
-                              {activity.description}
-                            </p>
-                          </div>
+                          
+                          {/* Image Carousel */}
+                          {(activity as any).images && (activity as any).images.length > 0 && (
+                            <div className="pl-0 sm:pl-16 mt-6">
+                              <ImageCarousel 
+                                images={(activity as any).images} 
+                                activityTitle={activity.title} 
+                              />
+                            </div>
+                          )}
                         </div>
                       </CardContent>
                     </Card>
