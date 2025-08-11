@@ -8,11 +8,11 @@ import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export function AboutSection() {
-  const sectionRef = useRef(null);
-  const headerRef = useRef(null);
-  const imageRef = useRef(null);
-  const missionRef = useRef(null);
-  const cardsRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const missionRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -36,24 +36,26 @@ export function AboutSection() {
     );
 
     // Header animation
-    gsap.fromTo(headerRef.current.children, 
-      {
-        y: 50,
-        opacity: 0
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
+    if (headerRef.current) {
+      gsap.fromTo(headerRef.current.children, 
+        {
+          y: 50,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
         }
-      }
-    );
+      );
+    }
 
     // Image animation with parallax effect
     gsap.fromTo(imageRef.current, 
@@ -90,64 +92,68 @@ export function AboutSection() {
     });
 
     // Mission content animation
-    gsap.fromTo(missionRef.current.children, 
-      {
-        x: 100,
-        opacity: 0
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: missionRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
+    if (missionRef.current) {
+      gsap.fromTo(missionRef.current.children, 
+        {
+          x: 100,
+          opacity: 0
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: missionRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
         }
-      }
-    );
+      );
+    }
 
     
-    gsap.fromTo(cardsRef.current.children, 
-      {
-        y: 80,
-        opacity: 0,
-        scale: 0.8,
-        rotationY: 15
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        rotationY: 0,
-        duration: 1.2,
-        stagger: 0.2,
-        ease: "back.out(1.7)",
+    if (cardsRef.current) {
+      gsap.fromTo(cardsRef.current.children, 
+        {
+          y: 80,
+          opacity: 0,
+          scale: 0.8,
+          rotationY: 15
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          rotationY: 0,
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "back.out(1.7)",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+      
+      gsap.to(cardsRef.current.children, {
+        y: -10,
+        duration: 2,
+        ease: "power2.inOut",
+        yoyo: true,
+        repeat: -1,
+        stagger: 0.3,
         scrollTrigger: {
           trigger: cardsRef.current,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
+          start: "top 50%",
+          end: "bottom 50%",
+          toggleActions: "play pause resume pause"
         }
-      }
-    );
-
-    
-    gsap.to(cardsRef.current.children, {
-      y: -10,
-      duration: 2,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: -1,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: cardsRef.current,
-        start: "top 50%",
-        end: "bottom 50%",
-        toggleActions: "play pause resume pause"
-      }
-    });
+      });
+    }
       
 
   }, []);

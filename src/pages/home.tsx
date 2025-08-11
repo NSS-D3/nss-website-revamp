@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollSmoother, ScrollTrigger, ScrollToPlugin } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { AboutSection } from "../components/about-section";
 import { ActivitiesSection } from "../components/activities-section";
@@ -10,18 +10,30 @@ import { EventsSection } from "../components/events-section";
 import { Footer } from "../components/footer";
 import Landing from "../components/landing/landing";
 import { Navigation } from "../components/navigation";
+import Preloader from "../components/preloader/Preloader";
 import { TeamSection } from "../components/team-section";
 import { ScrollSmootherProvider } from "../hooks/use-scroll-smoother";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 
 export default function Home() {
+  // Only show preloader on first visit or page refresh
+  const [isPreloading, setIsPreloading] = useState(() => {
+    const hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore');
+    return !hasLoadedBefore;
+  });
+  
   const smoothWrapperRef = useRef<HTMLDivElement>(null);
   const smoothContentRef = useRef<HTMLDivElement>(null);
   const mainContentRef = useRef<HTMLDivElement>(null);
   const landingRef = useRef<HTMLDivElement>(null);
   const smootherRef = useRef<ScrollSmoother | null>(null);
   const location = useLocation();
+
+  const handlePreloadComplete = () => {
+    setIsPreloading(false);
+    sessionStorage.setItem('hasLoadedBefore', 'true');
+  };
 
   useEffect(() => {
     // Initialize ScrollSmoother
@@ -87,39 +99,47 @@ export default function Home() {
   }, []);
 
   return (
-    <ScrollSmootherProvider smootherRef={smootherRef}>
-      <div id="smooth-wrapper" ref={smoothWrapperRef}>
-        <div id="smooth-content" ref={smoothContentRef}>
-          <div className="z-10 relative" ref={landingRef}>
-            <Landing />
-            <Navigation />
+    <>
+      {/* Show preloader only on initial load */}
+      {isPreloading && <Preloader onComplete={handlePreloadComplete} />}
+      
+      {/* Main content - always rendered but hidden during preload */}
+      <div style={{ visibility: isPreloading ? 'hidden' : 'visible' }}>
+        <ScrollSmootherProvider smootherRef={smootherRef}>
+          <div id="smooth-wrapper" ref={smoothWrapperRef}>
+            <div id="smooth-content" ref={smoothContentRef}>
+              <div className="z-10 relative" ref={landingRef}>
+                <Landing />
+                <Navigation />
+              </div>
+              <div 
+                className="min-h-screen bg-gray-50 z-20 relative" 
+                ref={mainContentRef}
+              >
+                <div className="content-section">
+                  <AboutSection />
+                </div>
+                <div className="content-section">
+                  <ActivitiesSection />
+                </div>
+                <div className="content-section">
+                  <EventsSection />
+                </div>
+                <div className="content-section">
+                  <TeamSection />
+                </div>
+                
+                <div className="content-section">
+                  <ContactSection />
+                </div>
+                <div className="content-section">
+                  <Footer />
+                </div>
+              </div>
+            </div>
           </div>
-          <div 
-            className="min-h-screen bg-gray-50 z-20 relative" 
-            ref={mainContentRef}
-          >
-            <div className="content-section">
-              <AboutSection />
-            </div>
-            <div className="content-section">
-              <ActivitiesSection />
-            </div>
-            <div className="content-section">
-              <EventsSection />
-            </div>
-            <div className="content-section">
-              <TeamSection />
-            </div>
-            
-            <div className="content-section">
-              <ContactSection />
-            </div>
-            <div className="content-section">
-              <Footer />
-            </div>
-          </div>
-        </div>
+        </ScrollSmootherProvider>
       </div>
-    </ScrollSmootherProvider>
+    </>
   );
 }
