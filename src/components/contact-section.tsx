@@ -70,7 +70,7 @@ export function ContactSection() {
         
         toast({
           title: "Opening Email Client",
-          description: "We'll open your default email app to send the message. If this doesn't work, please email us directly at atharv20agarwal@gmail.com",
+          description: "We'll open your default email app to send the message. If this doesn't work, please email us directly at nss@pilani.bits-pilani.ac.in",
         });
         
         // Small delay to show the toast
