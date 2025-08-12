@@ -45,10 +45,10 @@ const Flower = forwardRef<HTMLDivElement, FlowerProps>(
           {
             scrollTrigger: {
               trigger: `.${styles.container}`,
-              start: "44% 25%",
-              end: "170% 25%",
+              start: "44% 35%",
+              end: "170% 35%",
               markers: false,
-              scrub: 2,
+              scrub: 1,
             },
             strokeDashoffset: 0,
             ease: "none",
