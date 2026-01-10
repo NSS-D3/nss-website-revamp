@@ -1,7 +1,6 @@
 import { TEAM_POSITIONS } from "../lib/constants";
 import { professors, teamMembers } from "../lib/team";
 import TeamMemberCard from "./TeamSection/TeamMemberCard";
-import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 
 export function TeamSection() {
@@ -67,7 +66,7 @@ export function TeamSection() {
                         <p className="text-xs sm:text-sm text-blue-700 font-medium mb-2">
                           {faculty.position}
                         </p>
-                        {faculty.email && (
+                        {/* {faculty.email && (
                           <a href={`mailto:${faculty.email}`} className="block">
                             <Button
                               variant="ghost"
@@ -81,7 +80,7 @@ export function TeamSection() {
                               <span className="sm:hidden">Email</span>
                             </Button>
                           </a>
-                        )}
+                        )} */}
                       </CardContent>
                     </Card>
                   </div>
@@ -110,7 +109,7 @@ export function TeamSection() {
                         <p className="text-xs sm:text-sm text-community-green font-medium mb-2">
                           {officer.position}
                         </p>
-                        {officer.email && (
+                        {/* {officer.email && (
                           <a href={`mailto:${officer.email}`} className="block">
                             <Button
                               variant="ghost"
@@ -124,7 +123,7 @@ export function TeamSection() {
                               <span className="lg:hidden">Contact</span>
                             </Button>
                           </a>
-                        )}
+                        )} */}
                       </CardContent>
                     </Card>
                   </div>

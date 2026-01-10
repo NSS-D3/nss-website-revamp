@@ -28,7 +28,7 @@ export const ACTIVITIES = [
     stats: "50+ Students Impacted",
   },
   {
-    title: "Health Public Awareness",
+    title: "Health and Public Awareness",
     description:
       "Organizing medical checkups, health awareness, and wellness programs.",
     image:
@@ -38,7 +38,7 @@ export const ACTIVITIES = [
     stats: "200+ People Served",
   },
   {
-    title: "Parisodh",
+    title: "Parishodh",
     description: "Environmental cleanup drives and tree plantation campaigns.",
     image:
       "https://images.unsplash.com/photo-1618477371303-b2a56f422d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",

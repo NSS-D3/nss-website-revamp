@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BackButton } from '../components/ui/back-button';
 
 
@@ -46,8 +46,8 @@ export const Parisodh = () => {
 
   //  coordinators data
   const coordinators: Coordinator[] = [
-    { name: "Isha Verma", position: "Parisodh Coordinator" },
-    { name: "Siddharth Bhamidipati", position: "Parisodh Coordinator" },
+    { name: "Isha Verma", position: "Parishodh Coordinator" },
+    { name: "Siddharth Bhamidipati", position: "Parishodh Coordinator" },
   ];
 
   
@@ -56,7 +56,7 @@ export const Parisodh = () => {
     description: "Leading environmental cleanup drives and sustainability projects, coordinating waste management and green initiatives.",
     icon: "fas fa-seedling",
     color: "from-green-600 to-lime-500",
-    members: coordinators.filter((c) => c.position.includes("Parisodh")),
+    members: coordinators.filter((c) => c.position.includes("Parishodh")),
     details: {
       mission: "To promote environmental conservation and sustainability through community-driven initiatives.",
       activities: [
@@ -110,7 +110,7 @@ export const Parisodh = () => {
         {/* About Section */}
         <section className="mb-20 bg-white p-8 rounded-lg shadow-sm border border-[#FFC3C0]">
           <h2 className="text-3xl font-semibold text-[#0D5760] mb-6 text-center">
-            About Parisodh
+            About Parishodh
           </h2>
           <div className="prose max-w-none text-gray-700">
             <p className="text-lg mb-6">{parisodhData.description}</p>
@@ -158,7 +158,7 @@ export const Parisodh = () => {
         <section>
           <div className="text-center mb-12">
             <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
-              Parisodh in Action
+              Parishodh in Action
             </h2>
           </div>
           

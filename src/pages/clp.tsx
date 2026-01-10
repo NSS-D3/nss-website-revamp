@@ -88,7 +88,7 @@ export const ComputerLiteracyProgramme = () => {
             "Students of classes 6-8th from nearby schools: Vashishth Pathak Public School, Vijay Public School, Holy Child School, CEERI Vidya, Birla School, etc came to PARC building every Monday to Saturday and they were taught basic computer applications such as Excel, Word, PowerPoint and Networking. On an average, 15-20 students regularly attended every slot, with the highest attendance being around 30. Overall, the children had a positive feedback and wish to learn from an updated syllabus in the coming semester.",
         },
         {
-          title: "Ummeed",
+          title: "Umeed",
           description:
             "Umeed is an inspiring series of Olympiads crafted for the children of Pilani in classes 8-10th. It was conducted on 16th November in collaboration with the NSS School Department. This semester, we covered 7 schools namely: Vashishth Pathak Public School, Vijay Public School, Holy Child School, Kids Garden, Hemant Public School and Hanumantpura Gov. School. This semester showed increased participation from the beneficiaries.",
         },

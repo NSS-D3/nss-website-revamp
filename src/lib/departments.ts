@@ -12,13 +12,13 @@ export const teamMembers = [
   {
     id: 3,
     name: "Isha Gupta",
-    position: "Parisodh Coordinator",
+    position: "Parishodh Coordinator",
   },
 
   {
     id: 4,
     name: "Siddharth Bhamidipati",
-    position: "Parisodh Coordinator",
+    position: "Parishodh Coordinator",
   },
   {
     id: 5,
@@ -188,7 +188,7 @@ export const departments = [
     },
   },
   {
-    name: "Health Public Awareness",
+    name: "Health and Public Awareness",
     id: "health-public-awareness",
     description:
       "Managing health camps and wellness programs, leading health awareness campaigns and medical outreach.",
@@ -231,13 +231,13 @@ export const departments = [
     },
   },
   {
-    name: "Parisodh",
+    name: "Parishodh",
     id: "parisodh",
     description:
       "Leading environmental cleanup drives and sustainability projects, coordinating waste management and green initiatives.",
     icon: "fas fa-seedling",
     color: "from-emerald-500 to-emerald-700",
-    members: coordinators.filter((c) => c.position.includes("Parisodh")),
+    members: coordinators.filter((c) => c.position.includes("Parishodh")),
     details: {
       mission:
         "To promote environmental conservation and sustainability through community-driven initiatives.",

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BackButton } from '../components/ui/back-button';
 
 
@@ -48,14 +48,14 @@ export const HealthPublicAwareness = () => {
 
   // coordinators data
   const coordinators: Coordinator[] = [
-    { name: "Samridhi Agrawal", position: "Health Public Awareness Coordinator" },
-    { name: "Bhuvanyu Kumar Sharma", position: "Health Public Awareness Coordinator" },
+    { name: "Samridhi Agrawal", position: "Health and Public Awareness Coordinator" },
+    { name: "Bhuvanyu Kumar Sharma", position: "Health and Public Awareness Coordinator" },
   ];
 
-  // Health Public Awareness data
+  // Health and Public Awareness data
   const hpaData: HealthPublicAwarenessData = {
-    name: "Health Public Awareness",
-    description: "Managing health camps and wellness programs, leading health awareness campaigns and medical outreach.",
+    name: "Health and Public Awareness",
+    description: "We manage health camps and wellness programs, lead health awareness campaigns, and conduct medical outreach to promote community well-being.",
     icon: "fas fa-stethoscope",
     color: "from-green-500 to-teal-500",
     members: coordinators.filter((c) => c.position.includes("Health")),
@@ -64,32 +64,31 @@ export const HealthPublicAwareness = () => {
       activities: [
         {
           title: "Pad Distribution Drive",
-          description:
-            "`In our efforts to promote menstrual hygiene and awareness, HPA volunteers organised two pad distribution drives in Hanumantpura. The pads were sponsored by the Indian Red Cross Society. We visited homes and distributed sufficient supply of pads while ensuring the women were familiar with their use and maintaining proper hygiene. This initiative seeks to foster a healthier and more informed community and ensuring that every woman and girl has access to necessary sanitary products",
+          description: `In our efforts to promote menstrual hygiene and awareness, HPA volunteers organise pad distribution drives in Hanumantpura, with sanitary pads sponsored by the Indian Red Cross Society. Volunteers visit homes to distribute a sufficient supply of pads, while also educating women on their proper use and the importance of maintaining hygiene. This initiative aims to foster a healthier and more informed community, ensuring that every woman and girl has access to essential sanitary products.`
         },
         {
           title: "Clothes Sorting/Distribution",
-          description: `This drive was conducted twice - on 26th November and 26th January in Hanumantpura and Naat Basti. HPA volunteers collected old clothing and toys from the staff of BITS Pilani, around the time of Diwali. We were able to collect 3-4 big cartons worth of clothes. These clothes were distributed in two sessions as HPA volunteers went door to door in Hanumantpura and Naat Basti, where the residents picked out clothes for their families. This event was met with great reception and we successfully distributed the complete inventory`,
+          description: `HPA organises clothes sorting and distribution drives in communities such as Hanumantpura and Naat Basti. Old clothing and toys are collected from the staff of BITS Pilani, often around festive occasions like Diwali. Volunteers sort and pack the donations, which typically amount to several large cartons, and conduct door-to-door distribution, allowing residents to select items for their families. These drives receive enthusiastic community response and ensure that the collected inventory is fully distributed to those in need.`
         },
         {
           title: "Health Camp Survey",
-          description: `The target of the survey was to assess the wellbeing of the villagers and check for any prevalent health conditions prior to the Health Camp, and also to publicize the event. Two rounds of surveys were conducted (in Hanumantpura for the first Health camp and on Poorvi Marg, hostel messes and EMU for the second) where volunteers went from house to house and interacted with as many people living there as they could. This was a huge learning experience as we not only learned to communicate amicably with the local residents of Pilani but also learned about their lifestyles and problems. We also extended them invitations to the health camps which led to a significant footfall during the event`,
+          description: `The Health Camp Survey aims to assess the well-being of local residents and identify any prevalent health conditions prior to each camp, while also raising awareness about the upcoming event. Surveys are conducted in multiple locations, including Hanumantpura, Poorvi Marg, hostel messes, and EMU, where volunteers go door-to-door interacting with as many residents as possible. This process helps volunteers build effective communication with the local community, understand their lifestyles and challenges, and personally invite them to attend the health camps—resulting in significant community participation.`
         },
         {
           title: "Adult Initiative",
-          description: `This initiative was conducted thrice in collaboration with CLP with the target of imparting some useful skills, both technical and non-technical to older women, so they can be self-dependent. We went to Poorvi Marg-1 and taught the women there simple things like writing their names, doing their signature, and teaching them to write in cursive so they can teach their children and also in their day-to-day life. We also taught them to type using text to speech and browse on apps like YouTube. Spending time with the older people was a very fulfilling experience for the volunteers as well.`,
+          description: `The Adult Initiative, conducted in collaboration with CLP, focuses on imparting both technical and non-technical skills to older women, enabling them to become more self-reliant. Volunteers visit areas such as Poorvi Marg-1 to teach practical skills, including writing names, creating signatures, and writing in cursive—skills that not only assist in daily life but also empower the women to guide their children. Additionally, participants learn to use text-to-speech tools for typing and to browse educational resources on platforms like YouTube. This initiative strengthens community engagement while fostering confidence and independence among the women.`
         },
         {
           title: "Health Camp at Old SAC",
-          description: `The second Health Camp was conducted at Old SAC on 28th April 2024 from 9AM to 1PM for SSMS and EMU staff and the residents of Poorvi Marg. The event was preceded by extensive publicity to ensure maximum participation. More than 120 patients got free health checkups, BP, blood sugar and temperature checks along with free general medication and further recommendations if needed. This event was greatly appreciated by the participants and advised us to conduct them regularly. The volunteers gained valuable insight and hands-on experience in organising such events.`,
+          description: `The Health Camp at Old SAC serves SSMS and EMU staff as well as residents of Poorvi Marg, offering free health services from 9:00 AM to 1:00 PM. Extensive publicity precedes the event to encourage maximum participation. Attendees receive comprehensive checkups, including blood pressure, blood sugar, and temperature measurements, along with free general medication and recommendations for further care if required. The initiative is well-received by the community and provides volunteers with valuable experience in planning and managing large-scale health events.`
         },
         {
           title: "Health Camp at Hanumantpura",
-          description: `The first Health camp was organised for the residents of Hanumantpura on 18th February 2024 at the government primary school building from 9AM to 1PM. The goal of the camp was to provide free health checkups and general medication to people who might find regular hospital visits inconvenient or expensive. With the help of a doctor and nursing staff from MedC, we gave free consultations, BP and temperature checks and distributed free general medication. If they required care we couldn't provide they were recommended to consult another doctor. We received very appreciative feedback and were able to provide healthcare to more than 70 patients`,
+          description: `The Health Camp at Hanumantpura is held at the government primary school building from 9:00 AM to 1:00 PM, with the aim of providing free health checkups and general medication to residents who may find regular hospital visits inconvenient or costly. Supported by a doctor and nursing staff from MedC, the camp offers free consultations, blood pressure and temperature checks, and distributes general medication. Patients requiring additional care are advised to consult specialised medical professionals. The initiative is met with warm appreciation from the community and provides essential healthcare to more than 70 residents.`
         },
         {
           title: "Lecture Series",
-          description: `A collaborative initiative between NSS School and HPA aimed to educate School students from grades 2nd to 8th through engaging presentations with interactive images and videos. These sessions, led by HPA volunteers, covered essential topics such as eye care and the importance of extracurricular activities. The duration of each lecture was 1.5 hours, and a total of 3 of these sessions were conducted successfully at the NSS building during school hours. The initiative seeked to promote holistic development among children, fostering a sense of well-being and awareness.`,
+          description: `The Lecture Series, a collaborative initiative between NSS School and HPA, aims to educate students from grades 2 to 8 through engaging presentations featuring interactive images and videos. Led by HPA volunteers, these sessions cover essential topics such as eye care and the importance of extracurricular activities. Each lecture lasts approximately 1.5 hours and is conducted during school hours at the NSS building. The initiative promotes holistic development, fostering well-being and awareness among children.`
         },
       ]
     }
@@ -174,6 +173,54 @@ export const HealthPublicAwareness = () => {
                 )}
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Aims Section */}
+        <section className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-[#0D5760] inline-block px-6 pb-2 border-b-2 border-[#0D5760]">
+              Our Aims
+            </h2>
+          </div>
+          
+          <ul className="grid md:grid-cols-2 gap-8">
+            {[
+              "To promote community health through regular health camps, awareness drives, and preventive care initiatives.",
+              "To enhance public awareness on hygiene, nutrition, and wellness through educational outreach and campaigns.",
+              "To empower individuals—especially women—by imparting practical skills for self-reliance.",
+              "To provide support and resources to underserved communities through targeted distribution drives.",
+              "To foster volunteerism and social responsibility among youth through active engagement in service projects.",
+              "To build sustainable partnerships with organisations to expand the reach and impact of our initiatives."
+            ].map((aim, index) => (
+              <li key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border-l-4 border-[#0D5760]">
+                <div className="flex items-start">
+                  <span className="text-xl mr-3 mt-0.5 text-[#0D5760]">•</span>
+                  <span className="text-gray-700 leading-relaxed">{aim}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Vision Section */}
+        <section className="mb-20 bg-white p-10 rounded-lg border border-[#FFC3C0] shadow-sm">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-semibold text-[#0D5760] mb-8 text-center">
+              Our Vision
+            </h2>
+            <div className="relative">
+              <blockquote className="text-lg text-gray-700 leading-relaxed text-center italic">
+                <p className="relative">
+                  <span className="absolute -left-6 -top-4 text-4xl text-[#FFC3C0]">"</span>
+                  To be a leading community health and outreach organisation that promotes well-being, empowers individuals through knowledge and skills, and fosters a culture of compassion and service, creating healthier and more informed communities.
+                  <span className="absolute -right-6 -bottom-6 text-4xl text-[#FFC3C0]">"</span>
+                </p>
+              </blockquote>
+              <div className="mt-8 flex justify-center">
+                <div className="h-px w-20 bg-[#0D5760] bg-opacity-30"></div>
+              </div>
+            </div>
           </div>
         </section>
 
