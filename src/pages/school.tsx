@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
 
 
@@ -109,6 +110,10 @@ export const School = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
+      <SEO 
+        title="School Department - NSS BITS Pilani" 
+        description="Overseeing literacy and education programs, managing school outreach and student mentorship programs." 
+      />
       {/* Header */}
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">

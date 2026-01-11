@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
 
 type GalleryImage = {
@@ -98,6 +99,10 @@ Conferencia de Youth (CDY) – A platform for youth-led dialogue and action on s
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
+      <SEO 
+        title="Department of Sponsorship and Collaboration - NSS BITS Pilani" 
+        description="Managing partnerships and sponsorship initiatives, building strategic partnerships and collaboration opportunities." 
+      />
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
           <div className="mb-6">

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
 
 
@@ -107,6 +108,10 @@ export const Umang = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
+      <SEO 
+        title="Umang - NSS BITS Pilani" 
+        description="Organizing support programmes for those in need, fostering a supportive learning environment." 
+      />
       {/* Header */}
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">

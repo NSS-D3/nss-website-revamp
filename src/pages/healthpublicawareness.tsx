@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 import { BackButton } from '../components/ui/back-button';
 
 
@@ -110,6 +111,10 @@ export const HealthPublicAwareness = () => {
 
   return (
     <div className="min-h-screen font-heading bg-[#FFF5F4]">
+      <SEO 
+        title="Health and Public Awareness - NSS BITS Pilani" 
+        description="We manage health camps and wellness programs, lead health awareness campaigns, and conduct medical outreach to promote community well-being." 
+      />
       {/* Header */}
       <header className="py-12 bg-[#0D5760]">
         <div className="container mx-auto px-4">
