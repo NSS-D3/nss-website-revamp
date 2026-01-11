@@ -89,27 +89,29 @@ export default function Landing() {
 
       <div className={styles.content}>
         <div className={styles.title1}>
-          <h1>
+          <div>
             <StaggeredText text="Not" />
             <span> </span>
             <StaggeredText text="Me" />
-          </h1>
-          <h1>
+          </div>
+          <div className={styles.pinkText}>
             <StaggeredText text="BUT" />
             <span> </span>
             <StaggeredText text="You" />
-          </h1>
+          </div>
         </div>
         <Flower ref={flowerRef} />
         <div className={styles.title2}>
           <h1>
-            <StaggeredText text="NSS" />
-          </h1>
-          <h1>
-            <StaggeredText text="BITS" />
-          </h1>
-          <h1>
-            <StaggeredText text="Pilani" />
+            <div className="block">
+              <StaggeredText text="NSS" />
+            </div>
+            <div className="block">
+              <StaggeredText text="BITS" />
+            </div>
+            <div className={`block ${styles.pinkText}`}>
+              <StaggeredText text="Pilani" />
+            </div>
           </h1>
         </div>
       </div>
