@@ -99,11 +99,11 @@ export default function Home() {
       {/* Main content - always rendered but hidden during preload */}
       <div style={{ visibility: isPreloading ? "hidden" : "visible" }}>
         <ScrollSmootherProvider smootherRef={smootherRef}>
+          <Navigation />
           <div id="smooth-wrapper" ref={smoothWrapperRef}>
             <div id="smooth-content" ref={smoothContentRef}>
               <div className="z-10 relative" ref={landingRef}>
                 <Landing />
-                <Navigation />
               </div>
               <div
                 className="min-h-screen bg-gray-50 z-20 relative"

@@ -1,8 +1,14 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMobileMenu } from "../hooks/use-mobile-menu";
 import { useScrollSmoother } from "../hooks/use-scroll-smoother";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const navigationLinks = [
   { href: "/", label: "Home", isSection: false },
@@ -19,6 +25,28 @@ export function Navigation() {
   const { smootherRef } = useScrollSmoother();
   const location = useLocation();
   const navigate = useNavigate();
+  const navRef = useRef<HTMLElement>(null);
+
+  useGSAP(() => {
+    const showAnim = gsap.from(navRef.current, { 
+      yPercent: -100,
+      paused: true,
+      duration: 0.3,
+      ease: "power2.out"
+    }).progress(1);
+
+    ScrollTrigger.create({
+      start: "top top",
+      end: 99999,
+      onUpdate: (self) => {
+        if (self.direction === -1) {
+          showAnim.play();
+        } else {
+          showAnim.reverse();
+        }
+      }
+    });
+  }, { scope: navRef });
 
   const handleLinkClick = (href: string, isSection: boolean) => {
     if (isSection) {
@@ -56,7 +84,7 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed w-full top-0 z-[9999] bg-[#0d5756] shadow-lg">
+    <nav ref={navRef} className="fixed w-full top-0 z-[9999] bg-[#0d5756] shadow-lg transition-transform">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
           {/* Logo */}
