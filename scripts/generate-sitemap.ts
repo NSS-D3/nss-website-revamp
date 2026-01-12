@@ -25,6 +25,7 @@ const routes = [
     '/shop-for-smile',
     '/blood-donation-camp',
     '/conferencia-de-youth',
+    '/sponsors',
 ];
 
 const generateSitemap = () => {
