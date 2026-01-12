@@ -78,14 +78,7 @@ export default function Landing() {
   );
   return (
     <main className={styles.wrapper}>
-      {/* <div className={styles.btnWrapper}>
-        <LandingButton
-          text="Our Team"
-          onClick={() => {
-            navigate("/team");
-          }}
-        />
-      </div> */}
+
 
       <div className={styles.content}>
         <div className={styles.title1}>

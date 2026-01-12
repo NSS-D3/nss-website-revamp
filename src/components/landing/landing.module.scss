@@ -44,22 +44,7 @@ $btn-zindex: 3;
     justify-content: space-between;
   }
 
-  .btnWrapper {
-    @include contentWidth();
-    background: transparent;
 
-    position: relative;
-    z-index: $btn-zindex;
-    display: flex;
-    justify-content: flex-end;
-    font-size: 1rem;
-    font-weight: 200;
-    font-family: arial;
-    margin-top: -60px;
-    color: white;
-    gap: 100px;
-    opacity: 0.8;
-  }
 
   .content {
     @include contentWidth();

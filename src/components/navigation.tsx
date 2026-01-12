@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useMobileMenu } from "../hooks/use-mobile-menu";
 import { useScrollSmoother } from "../hooks/use-scroll-smoother";
 import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "./ui/sheet";
 
 const navigationLinks = [
   { href: "/", label: "Home", isSection: false },
@@ -84,6 +84,12 @@ export function Navigation() {
                 {link.label}
               </button>
             ))}
+            <Button
+              className="bg-white text-[#0D5760] hover:bg-gray-100 font-bold ml-4"
+              onClick={() => handleLinkClick("/sponsors", false)}
+            >
+              Our Sponsors
+            </Button>
           </div>
 
           {/* Mobile menu */}
@@ -99,6 +105,12 @@ export function Navigation() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+                <div className="sr-only">
+                  <SheetTitle>Mobile Navigation Menu</SheetTitle>
+                  <SheetDescription>
+                    Navigation links for accessing different sections of the website.
+                  </SheetDescription>
+                </div>
                 <div className="flex flex-col space-y-2 mt-8">
                   <div className="flex items-center space-x-3 mb-6 pb-4 border-b">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#0d5760]">
@@ -131,8 +143,20 @@ export function Navigation() {
                         } mr-3 text-sm text-gray-500`}
                       ></i>
                       {link.label}
-                    </button>
+                      </button>
                   ))}
+                  <button
+                    onClick={() => {
+                      close();
+                      setTimeout(() => {
+                        handleLinkClick("/sponsors", false);
+                      }, 350);
+                    }}
+                    className="block w-full px-4 py-3 text-left bg-[#0d5760] text-white hover:bg-[#093f3e] rounded-lg font-bold transition-colors duration-200 mt-4"
+                  >
+                    <i className="fas fa-heart mr-3 text-sm"></i>
+                    Our Sponsors
+                  </button>
                 </div>
               </SheetContent>
             </Sheet>

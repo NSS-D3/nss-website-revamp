@@ -8,19 +8,21 @@ import Home from "./pages/home";
 
 import { OfficeBearersPage } from "./pages/office-bearers";
 
+import BloodDonationCamp from "./pages/blood-donation-camp";
 import { ComputerLiteracyProgramme } from "./pages/clp";
+import ConferenciaDeYouth from "./pages/conferencia-de-youth";
 import { DesignDevelopment } from "./pages/d3";
 import { SponsorshipCollaboration } from "./pages/departmentofsponsorshipandcollaboration";
 import { Events } from "./pages/events";
 import { GalleryPage } from "./pages/gallery";
 import { HealthPublicAwareness } from "./pages/healthpublicawareness";
+import Junoon from "./pages/junoon";
 import { Parisodh } from "./pages/parisodh";
 import { School } from "./pages/school";
-import { Umang } from "./pages/umang";
-import BloodDonationCamp from "./pages/blood-donation-camp";
-import ConferenciaDeYouth from "./pages/conferencia-de-youth";
-import Junoon from "./pages/junoon";
 import ShopForSmile from "./pages/shop-for-smile";
+import { Umang } from "./pages/umang";
+
+import SponsorsPage from "./pages/sponsors";
 
 function App() {
   return (
@@ -61,6 +63,7 @@ function App() {
             path="/conferencia-de-youth"
             element={<ConferenciaDeYouth />}
           />
+          <Route path="/sponsors" element={<SponsorsPage />} />
         </Routes>
       </TooltipProvider>
     </QueryClientProvider>
