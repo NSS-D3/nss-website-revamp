@@ -1,12 +1,12 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMobileMenu } from "../hooks/use-mobile-menu";
 import { useScrollSmoother } from "../hooks/use-scroll-smoother";
 import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from "./ui/sheet";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { Sheet, SheetContent, SheetDescription, SheetTitle } from "./ui/sheet";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -123,16 +123,17 @@ export function Navigation() {
           {/* Mobile menu */}
           <div className="lg:hidden" data-mobile-menu>
             <Sheet open={isOpen} onOpenChange={toggle}>
-              <SheetTrigger asChild>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-white hover:bg-white/10 p-2"
+                  className="text-white hover:bg-white/10 p-2 relative z-[10000]"
+                  onClick={toggle}
                 >
-                  <i className="fas fa-bars text-lg sm:text-xl"></i>
+                  <i 
+                    className={`fas ${isOpen ? "fa-times" : "fa-bars"} text-lg sm:text-xl transition-all duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}
+                  ></i>
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+              <SheetContent side="right" className="w-[280px] sm:w-[320px] pt-20">
                 <div className="sr-only">
                   <SheetTitle>Mobile Navigation Menu</SheetTitle>
                   <SheetDescription>
