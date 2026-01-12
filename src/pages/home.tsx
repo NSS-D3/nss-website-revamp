@@ -9,6 +9,7 @@ import { EventsSection } from "../components/events-section";
 import { Footer } from "../components/footer";
 import Landing from "../components/landing/landing";
 import { Navigation } from "../components/navigation";
+import { NewsletterSection } from "../components/newsletter-section";
 import Preloader from "../components/preloader/Preloader";
 import SEO from "../components/SEO";
 import { TeamSection } from "../components/team-section";
@@ -89,7 +90,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO 
+      <SEO
         title="NSS BITS Pilani - National Service Scheme"
         description="Join NSS BITS Pilani in making a positive impact through community service, education support, health camps, environmental initiatives, and social responsibility programs. Not Me, But You."
       />
@@ -122,6 +123,9 @@ export default function Home() {
                   <TeamSection />
                 </div>
 
+                <div className="content-section">
+                  <NewsletterSection />
+                </div>
                 <div className="content-section">
                   <ContactSection />
                 </div>
