@@ -15,7 +15,8 @@ const navigationLinks = [
   { href: "#about", label: "About", isSection: true },
   { href: "#activities", label: "Departments", isSection: true },
   { href: "#events", label: "Events", isSection: true },
-  { href: "#team", label: "Team", isSection: true },
+  { href: "#newsletter", label: "Newsletter", isSection: true },
+  { href: "/team", label: "Team", isSection: false },
   // { href: "/gallery", label: "Gallery", isSection: false },
   { href: "#contact", label: "Contact Us", isSection: true },
 ];
@@ -28,7 +29,7 @@ export function Navigation() {
   const navRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
-    const showAnim = gsap.from(navRef.current, { 
+    const showAnim = gsap.from(navRef.current, {
       yPercent: -100,
       paused: true,
       duration: 0.3,
@@ -87,7 +88,7 @@ export function Navigation() {
     <nav ref={navRef} className="fixed w-full top-0 z-[9999] bg-[#0d5756] shadow-lg transition-transform">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16 lg:h-18">
-          {/* Logo */}
+          {}
           <button
             onClick={() => handleLinkClick("/", false)}
             className="flex items-center space-x-2 lg:space-x-3 hover:opacity-80 transition-opacity cursor-pointer group"
@@ -101,7 +102,7 @@ export function Navigation() {
             </div>
           </button>
 
-          {/* Desktop Navigation */}
+          {}
           <div className="hidden lg:flex space-x-6 xl:space-x-8">
             {navigationLinks.map((link) => (
               <button
@@ -123,16 +124,16 @@ export function Navigation() {
           {/* Mobile menu */}
           <div className="lg:hidden" data-mobile-menu>
             <Sheet open={isOpen} onOpenChange={toggle}>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white hover:bg-white/10 p-2 relative z-[10000]"
-                  onClick={toggle}
-                >
-                  <i 
-                    className={`fas ${isOpen ? "fa-times" : "fa-bars"} text-lg sm:text-xl transition-all duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}
-                  ></i>
-                </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white hover:bg-white/10 p-2 relative z-[10000]"
+                onClick={toggle}
+              >
+                <i
+                  className={`fas ${isOpen ? "fa-times" : "fa-bars"} text-lg sm:text-xl transition-all duration-300 ${isOpen ? "rotate-90" : "rotate-0"}`}
+                ></i>
+              </Button>
               <SheetContent side="right" className="w-[280px] sm:w-[320px] pt-20">
                 <div className="sr-only">
                   <SheetTitle>Mobile Navigation Menu</SheetTitle>
@@ -167,12 +168,11 @@ export function Navigation() {
                       className="block w-full px-4 py-3 text-left text-gray-700 hover:text-blue-800 hover:bg-blue-50 rounded-lg font-medium transition-colors duration-200 border border-transparent hover:border-blue-200"
                     >
                       <i
-                        className={`fas fa-${
-                          link.isSection ? "anchor" : "external-link-alt"
-                        } mr-3 text-sm text-gray-500`}
+                        className={`fas fa-${link.isSection ? "anchor" : "external-link-alt"
+                          } mr-3 text-sm text-gray-500`}
                       ></i>
                       {link.label}
-                      </button>
+                    </button>
                   ))}
                   <button
                     onClick={() => {

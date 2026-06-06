@@ -11,7 +11,7 @@ export function Footer() {
     { href: "#about", label: "About NSS" },
     { href: "#activities", label: "Our Activities" },
     { href: "#events", label: "Upcoming Events" },
-    { href: "#team", label: "Our Team" },
+    { href: "/team", label: "Our Team" }, 
     { href: "#contact", label: "Contact Us" },
   ];
 
@@ -23,15 +23,19 @@ export function Footer() {
   ];
 
   const handleLinkClick = (href: string) => {
-    // If we're not on the home page, navigate to home first
+
+ if (href.startsWith("/")) {
+  navigate(href);
+  window.scrollTo({ top: 0, behavior: "auto" }); 
+  return;
+}
+
     if (location.pathname !== "/") {
       navigate("/" + href, { replace: true });
-      // Wait for navigation to complete, then scroll
       setTimeout(() => {
         scrollToSection(href);
       }, 500);
     } else {
-      // Already on home page, just scroll directly
       scrollToSection(href);
     }
   };
@@ -40,9 +44,6 @@ export function Footer() {
     const sectionId = href.replace("#", "");
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80; // Account for fixed navbar height
-
-      // Use ScrollSmoother if available, otherwise fallback to native scroll
       if (smootherRef?.current) {
         smootherRef.current.scrollTo(element, true);
       } else {
@@ -58,8 +59,8 @@ export function Footer() {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12  flex items-center justify-center">
-               <img src="/logo/logo.png" alt="NSS Logo" className="w-8 h-8" />
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img src="/logo/logo.png" alt="NSS Logo" className="w-8 h-8" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold">NSS BITS Pilani</h3>
@@ -76,14 +77,10 @@ export function Footer() {
                   key={index}
                   variant="ghost"
                   size="icon"
-                  className="text-gray-400 hover:text-white transition-colors h-8 w-8"
+                  className="text-gray-400 hover:text-white h-8 w-8"
                   asChild
                 >
-                  <a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={social.href} target="_blank" rel="noopener noreferrer">
                     <i className={social.icon}></i>
                   </a>
                 </Button>
@@ -116,7 +113,6 @@ export function Footer() {
                 <i className="fas fa-envelope mr-2 text-sm"></i>
                 <span className="text-sm">nss@pilani.bits-pilani.ac.in</span>
               </li>
-             
               <li className="flex items-start">
                 <i className="fas fa-map-marker-alt mr-2 text-sm mt-1"></i>
                 <span className="text-sm">BITS Pilani, Rajasthan 333031</span>
@@ -125,12 +121,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+        <div className="border-t border-gray-800 pt-8 flex justify-between items-center">
+          <p className="text-gray-400 text-sm">
             © 2024 NSS BITS Pilani. All rights reserved. | "Not Me, But You"
           </p>
-          <div className="flex space-x-6 text-sm"></div>
         </div>
       </div>
     </footer>

@@ -21,6 +21,8 @@ import { Parisodh } from "./pages/parisodh";
 import { School } from "./pages/school";
 import ShopForSmile from "./pages/shop-for-smile";
 import { Umang } from "./pages/umang";
+import TeamPage from "./pages/Team";
+
 
 import SponsorsPage from "./pages/sponsors";
 
@@ -34,6 +36,7 @@ function App() {
           <Route path="/departments" element={<DepartmentsPage />} />
 
           <Route path="/office-bearers" element={<OfficeBearersPage />} />
+<Route path="/team" element={<TeamPage />} />
 
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/school" element={<School />} />

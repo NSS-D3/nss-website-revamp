@@ -12,9 +12,9 @@ export function TeamSection() {
     ].includes(member.position as any)
   );
 
-  const coordinators = teamMembers.filter((member) =>
-    member.position.includes("Coordinator")
-  );
+const coordinators = teamMembers
+  .filter((member) => member.position.includes("Coordinator"))
+  .sort((a, b) => a.position.localeCompare(b.position));
 
   const facultyIncharge = professors.filter(
     (prof) => prof.position === "Program Coordinator"
@@ -40,13 +40,13 @@ export function TeamSection() {
           </p>
         </div>
 
-        {/* Professors Section */}
-        <div className="mb-12 sm:mb-16">
+      {/* Professors Section */}
+       {/*} <div className="mb-12 sm:mb-16">
           <h3 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 font-heading mb-6 sm:mb-8">
             Professors
           </h3>
 
-          {/* Faculty In-charge */}
+         {/* {/* Faculty In-charge 
           {facultyIncharge.length > 0 && (
             <div className="mb-8 sm:mb-12">
               <h4 className="text-lg sm:text-xl font-semibold font-heading text-center text-gray-800 mb-4 sm:mb-6">
@@ -80,7 +80,7 @@ export function TeamSection() {
                               <span className="sm:hidden">Email</span>
                             </Button>
                           </a>
-                        )} */}
+                        )} 
                       </CardContent>
                     </Card>
                   </div>
@@ -90,7 +90,7 @@ export function TeamSection() {
           )}
 
           {/* Programme Officers */}
-          {programmeOfficers.length > 0 && (
+          {/*{programmeOfficers.length > 0 && (
             <div className="mb-8 sm:mb-12">
               <h4 className="text-lg sm:text-xl font-heading font-semibold text-center text-gray-800 mb-4 sm:mb-6">
                 Programme Officers
@@ -123,15 +123,18 @@ export function TeamSection() {
                               <span className="lg:hidden">Contact</span>
                             </Button>
                           </a>
-                        )} */}
+                        )} 
                       </CardContent>
                     </Card>
                   </div>
                 ))}
               </div>
             </div>
-          )}
-        </div>
+            */}
+          
+        {/*</div>
+        </section>*/} 
+        
 
         {/* Office Bearers */}
         <div className="mb-12 sm:mb-16">
