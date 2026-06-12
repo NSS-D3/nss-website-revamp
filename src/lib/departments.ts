@@ -26,7 +26,21 @@ export interface Activity {
   images?: string[];
 }
 
-export const departments = [
+export interface Department {
+  name: string;
+  id: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  members: typeof coordinators;
+  details: {
+    mission: string;
+    activities: Activity[];
+  };
+}
+
+export const departments: Department[] = [
   {
     name: "Computer Literacy Programme",
     id: "computer-literacy-programme",
