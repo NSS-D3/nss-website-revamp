@@ -20,8 +20,27 @@ export const teamMembers = [
 export const coordinators = teamMembers.filter((member) =>
   member.position.includes("Coordinator")
 );
+export interface Activity {
+  title: string;
+  description: string;
+  images?: string[];
+}
 
-export const departments = [
+export interface Department {
+  name: string;
+  id: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  members: typeof coordinators;
+  details: {
+    mission: string;
+    activities: Activity[];
+  };
+}
+
+export const departments: Department[] = [
   {
     name: "Computer Literacy Programme",
     id: "computer-literacy-programme",
@@ -31,7 +50,7 @@ export const departments = [
     color: "from-blue-500 to-blue-700",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
     members: coordinators.filter((c) => c.position.includes("Computer")),
-    details: { mission: "", activities: [] },
+    details: { mission: "", activities: [] as Activity[] },
   },
   {
     name: "Department of Design and Development",
@@ -42,7 +61,7 @@ export const departments = [
     color: "from-purple-500 to-purple-700",
     image: "https://images.unsplash.com/photo-1558655146-d09347e92766",
     members: coordinators.filter((c) => c.position.includes("Design")),
-    details: { mission: "", activities: [] },
+    details: { mission: "", activities: [] as Activity[] },
   },
   {
     name: "Department of Sponsorship and Collaboration",
@@ -53,7 +72,7 @@ export const departments = [
     color: "from-green-500 to-green-700",
     image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
     members: coordinators.filter((c) => c.position.includes("Sponsorship")),
-    details: { mission: "", activities: [] },
+    details: { mission: "", activities: [] as Activity[] },
   },
   {
     name: "Events",
@@ -64,7 +83,7 @@ export const departments = [
     color: "from-yellow-500 to-orange-600",
     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
     members: coordinators.filter((c) => c.position.includes("Events")),
-    details: { mission: "", activities: [] },
+    details: { mission: "", activities: [] as Activity[] },
   },
  {
   name: "Health and Public Awareness",
@@ -76,7 +95,7 @@ export const departments = [
   image:
     "https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80",
   members: coordinators.filter((c) => c.position.includes("Health")),
-  details: { mission: "", activities: [] },
+  details: { mission: "", activities: [] as Activity[] },
 },
 
   {
@@ -88,7 +107,7 @@ export const departments = [
     color: "from-emerald-500 to-emerald-700",
     image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
     members: coordinators.filter((c) => c.position.includes("Parishodh")),
-    details: { mission: "", activities: [] },
+    details: { mission: "", activities: [] as Activity[] },
   },
   {
     name: "School",
@@ -99,7 +118,7 @@ export const departments = [
     color: "from-indigo-500 to-indigo-700",
     image: "https://images.unsplash.com/photo-1509062522246-3755977927d7",
     members: coordinators.filter((c) => c.position.includes("School")),
-    details: { mission: "", activities: [] },
+    details: { mission: "", activities: [] as Activity[] },
   },
   {
     name: "Umang",
@@ -109,7 +128,7 @@ export const departments = [
     color: "from-pink-500 to-pink-700",
     image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac",
     members: coordinators.filter((c) => c.position.includes("Umang")),
-    details: { mission: "", activities: [] },
+    details: { mission: "", activities: [] as Activity[] },
   },
 ];
 
