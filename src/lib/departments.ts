@@ -1,20 +1,40 @@
 export const teamMembers = [
-  { id: 1, name: "Sitaram Prajapat", position: "School Coordinator" },
-  { id: 2, name: "Shreena Kansagra", position: "School Coordinator" },
-  { id: 3, name: "Isha Gupta", position: "Parishodh Coordinator" },
-  { id: 4, name: "Siddharth Bhamidipati", position: "Parishodh Coordinator" },
-  { id: 5, name: "Aarushi Tiwari", position: "Umang Coordinator" },
-  { id: 6, name: "Shivansh Saxena", position: "Umang Coordinator" },
-  { id: 7, name: "Aayush Katakwar", position: "Computer Literacy Programme Coordinator" },
-  { id: 8, name: "Mansi Mittal", position: "Computer Literacy Programme Coordinator" },
-  { id: 9, name: "Samridhi Agrawal", position: "Health and public awareness Coordinator" },
-  { id: 10, name: "Bhuvanyu Kumar", position: "Health and public awareness Coordinator" },
-  { id: 11, name: "Soumya Yadav", position: "Department of Sponsorship and Collaboration Coordinator" },
-  { id: 12, name: "Jainam Gandhi", position: "Events Coordinator" },
-  { id: 13, name: "Anuj Paliwal", position: "Events Coordinator" },
-  { id: 14, name: "Atharv Agrawal", position: "Department of Design and Development Coordinator" },
-  { id: 15, name: "Dhruv Gupta", position: "Department of Design and Development Coordinator" },
-  { id: 16, name: "Medhansh Sharma", position: "Department of Design and Development Coordinator" },
+  { id: 1, name: "Shubham Jain", position: "School Coordinator" },
+  { id: 2, name: "Anushka Mohanta", position: "School Coordinator" },
+
+  { id: 3, name: "Nick Fernandez", position: "Umang Coordinator" },
+  { id: 4, name: "Aryan Kulkarni", position: "Umang Coordinator" },
+
+  { id: 5, name: "Prachal Mittal", position: "Computer Literacy Programme Coordinator" },
+  { id: 6, name: "Antra Porwal", position: "Computer Literacy Programme Coordinator" },
+
+  { id: 7, name: "Aryan Saxena", position: "Health and Public Awareness Coordinator" },
+  { id: 8, name: "Keerthi Aaradhana", position: "Health and Public Awareness Coordinator" },
+
+  { id: 9, name: "Himinish Taneja", position: "Department of Sponsorship and Collaboration Coordinator" },
+  { id: 10, name: "Abhyuday Singh", position: "Department of Sponsorship and Collaboration Coordinator" },
+
+  { id: 11, name: "Prachita Pande", position: "Events Coordinator" },
+  { id: 12, name: "Nishque Sanodiya", position: "Events Coordinator" },
+
+  { id: 13, name: "Pranjal Agrawal", position: "Department of Design and Development Coordinator" },
+  { id: 14, name: "Aayush Raj", position: "Department of Design and Development Coordinator" },
+  // { id: 1, name: "Sitaram Prajapat", position: "School Coordinator" },
+  // { id: 2, name: "Shreena Kansagra", position: "School Coordinator" },
+  // { id: 3, name: "Isha Gupta", position: "Parishodh Coordinator" },
+  // { id: 4, name: "Siddharth Bhamidipati", position: "Parishodh Coordinator" },
+  // { id: 5, name: "Aarushi Tiwari", position: "Umang Coordinator" },
+  // { id: 6, name: "Shivansh Saxena", position: "Umang Coordinator" },
+  // { id: 7, name: "Aayush Katakwar", position: "Computer Literacy Programme Coordinator" },
+  // { id: 8, name: "Mansi Mittal", position: "Computer Literacy Programme Coordinator" },
+  // { id: 9, name: "Samridhi Agrawal", position: "Health and public awareness Coordinator" },
+  // { id: 10, name: "Bhuvanyu Kumar", position: "Health and public awareness Coordinator" },
+  // { id: 11, name: "Soumya Yadav", position: "Department of Sponsorship and Collaboration Coordinator" },
+  // { id: 12, name: "Jainam Gandhi", position: "Events Coordinator" },
+  // { id: 13, name: "Anuj Paliwal", position: "Events Coordinator" },
+  // { id: 14, name: "Atharv Agrawal", position: "Department of Design and Development Coordinator" },
+  // { id: 15, name: "Dhruv Gupta", position: "Department of Design and Development Coordinator" },
+  // { id: 16, name: "Medhansh Sharma", position: "Department of Design and Development Coordinator" },
 ];
 
 export const coordinators = teamMembers.filter((member) =>
